@@ -90,26 +90,40 @@ export class TrendingService implements OnModuleInit {
     if (!latest) return null;
     const batchStart = new Date(latest.fetchedAt.getTime() - 60_000);
 
-    const [movies, shows, topMovies, topShows, allItems] = await Promise.all([
+    const prevBatch = await this.prisma.trendingItem.findFirst({
+      where: { fetchedAt: { lt: batchStart } },
+      orderBy: { fetchedAt: 'desc' },
+      select: { fetchedAt: true },
+    });
+    const prevBatchStart = prevBatch ? new Date(prevBatch.fetchedAt.getTime() - 60_000) : null;
+
+    const [movies, shows, topMovies, topShows, allItems, prevItems] = await Promise.all([
       this.prisma.trendingItem.count({ where: { type: 'movie', fetchedAt: { gte: batchStart } } }),
       this.prisma.trendingItem.count({ where: { type: 'tv', fetchedAt: { gte: batchStart } } }),
       this.prisma.trendingItem.findMany({
         where: { type: 'movie', fetchedAt: { gte: batchStart } },
         orderBy: { rank: 'asc' },
         take: 5,
-        select: { title: true, rank: true, voteAverage: true, popularity: true },
+        select: { title: true, rank: true, voteAverage: true, popularity: true, tmdbId: true },
       }),
       this.prisma.trendingItem.findMany({
         where: { type: 'tv', fetchedAt: { gte: batchStart } },
         orderBy: { rank: 'asc' },
         take: 5,
-        select: { title: true, rank: true, voteAverage: true, popularity: true },
+        select: { title: true, rank: true, voteAverage: true, popularity: true, tmdbId: true },
       }),
       this.prisma.trendingItem.findMany({
         where: { fetchedAt: { gte: batchStart } },
-        select: { genreIds: true, type: true },
+        select: { genreIds: true, type: true, originalLanguage: true, releaseDate: true, tmdbId: true, voteAverage: true },
       }),
+      prevBatchStart ? this.prisma.trendingItem.findMany({
+        where: { fetchedAt: { gte: prevBatchStart, lt: batchStart } },
+        select: { tmdbId: true },
+      }) : Promise.resolve([]),
     ]);
+
+    const prevIds = new Set(prevItems.map(i => i.tmdbId));
+    const newThisWeek = allItems.filter(i => !prevIds.has(i.tmdbId)).length;
 
     const computeGenres = (type: string) => {
       const filtered = allItems.filter(i => i.type === type);
@@ -125,6 +139,30 @@ export class TrendingService implements OnModuleInit {
         .map(([genreId, count]) => ({ genreId, count, pct: Math.round((count / filtered.length) * 100) }));
     };
 
+    const langCounts = new Map<string, number>();
+    for (const item of allItems) {
+      if (item.originalLanguage) langCounts.set(item.originalLanguage, (langCounts.get(item.originalLanguage) ?? 0) + 1);
+    }
+    const topLanguages = [...langCounts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([lang, count]) => ({ lang, count, pct: Math.round((count / allItems.length) * 100) }));
+
+    const yearCounts = new Map<string, number>();
+    for (const item of allItems) {
+      if (item.releaseDate) {
+        const year = String(item.releaseDate).substring(0, 4);
+        if (year.match(/^\d{4}$/)) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+      }
+    }
+    const yearDistribution = [...yearCounts.entries()]
+      .sort((a, b) => b[0].localeCompare(a[0]))
+      .slice(0, 6)
+      .map(([year, count]) => ({ year, count, pct: Math.round((count / allItems.length) * 100) }));
+
+    const avgMovieRating = +(allItems.filter(i => i.type === 'movie' && i.voteAverage).reduce((s, i) => s + (i.voteAverage ?? 0), 0) / (allItems.filter(i => i.type === 'movie' && i.voteAverage).length || 1)).toFixed(1);
+    const avgShowRating = +(allItems.filter(i => i.type === 'tv' && i.voteAverage).reduce((s, i) => s + (i.voteAverage ?? 0), 0) / (allItems.filter(i => i.type === 'tv' && i.voteAverage).length || 1)).toFixed(1);
+
     const result = {
       movies,
       shows,
@@ -132,6 +170,11 @@ export class TrendingService implements OnModuleInit {
       topShows,
       topMovieGenres: computeGenres('movie'),
       topShowGenres: computeGenres('tv'),
+      topLanguages,
+      yearDistribution,
+      newThisWeek,
+      avgMovieRating,
+      avgShowRating,
       lastUpdated: latest.fetchedAt.toISOString(),
     };
     this.toCache('stats', result);
