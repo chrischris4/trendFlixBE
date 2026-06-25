@@ -18,12 +18,18 @@ export interface CreateBlogArticleDto {
 export class BlogService {
   constructor(private prisma: PrismaService) {}
 
-  findAll() {
-    return this.prisma.blogArticle.findMany({ orderBy: { createdAt: 'desc' } });
+  private serialize(a: Awaited<ReturnType<typeof this.prisma.blogArticle.findFirst>>) {
+    if (!a) return a;
+    return { ...a, viewCount: a.viewCount !== null ? Number(a.viewCount) : null };
   }
 
-  create(dto: CreateBlogArticleDto) {
-    return this.prisma.blogArticle.create({
+  async findAll() {
+    const rows = await this.prisma.blogArticle.findMany({ orderBy: { createdAt: 'desc' } });
+    return rows.map(a => this.serialize(a));
+  }
+
+  async create(dto: CreateBlogArticleDto) {
+    const a = await this.prisma.blogArticle.create({
       data: {
         tmdbId: dto.tmdbId ?? null,
         type: dto.type ?? null,
@@ -37,10 +43,11 @@ export class BlogService {
         editorialEn: dto.editorialEn,
       },
     });
+    return this.serialize(a);
   }
 
-  update(id: number, dto: Partial<CreateBlogArticleDto>) {
-    return this.prisma.blogArticle.update({
+  async update(id: number, dto: Partial<CreateBlogArticleDto>) {
+    const a = await this.prisma.blogArticle.update({
       where: { id },
       data: {
         ...(dto.title !== undefined && { title: dto.title }),
@@ -52,6 +59,7 @@ export class BlogService {
         ...(dto.editorialEn !== undefined && { editorialEn: dto.editorialEn }),
       },
     });
+    return this.serialize(a);
   }
 
   remove(id: number) {
