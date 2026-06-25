@@ -3,11 +3,23 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 import { PrismaService } from '../prisma/prisma.service';
 import { TmdbService } from '../tmdb/tmdb.service';
 
+const CACHE_TTL = 60 * 60 * 1000;
+
 @Injectable()
 export class TrendingService implements OnModuleInit {
   private readonly logger = new Logger(TrendingService.name);
+  private cache = new Map<string, { data: unknown; ts: number }>();
 
   constructor(private prisma: PrismaService, private tmdb: TmdbService) {}
+
+  private fromCache<T>(key: string): T | null {
+    const hit = this.cache.get(key);
+    return hit && Date.now() - hit.ts < CACHE_TTL ? hit.data as T : null;
+  }
+
+  private toCache(key: string, data: unknown) {
+    this.cache.set(key, { data, ts: Date.now() });
+  }
 
   async onModuleInit() {
     const count = await this.prisma.trendingItem.count();
@@ -25,6 +37,7 @@ export class TrendingService implements OnModuleInit {
       this.syncType('tv'),
     ]);
     await this.cleanOld();
+    this.cache.clear();
     this.logger.log('Synchronisation terminée');
   }
 
@@ -45,6 +58,10 @@ export class TrendingService implements OnModuleInit {
   }
 
   async getTrending(type: 'movie' | 'tv' | 'all', limit = 20) {
+    const key = `trending:${type}:${limit}`;
+    const cached = this.fromCache<unknown[]>(key);
+    if (cached) return cached;
+
     const latest = await this.prisma.trendingItem.findFirst({
       where: type === 'all' ? {} : { type },
       orderBy: { fetchedAt: 'desc' },
@@ -53,7 +70,7 @@ export class TrendingService implements OnModuleInit {
     if (!latest) return [];
 
     const batchStart = new Date(latest.fetchedAt.getTime() - 60_000);
-    return this.prisma.trendingItem.findMany({
+    const result = await this.prisma.trendingItem.findMany({
       where: {
         ...(type !== 'all' && { type }),
         fetchedAt: { gte: batchStart },
@@ -61,9 +78,14 @@ export class TrendingService implements OnModuleInit {
       orderBy: [{ type: 'asc' }, { rank: 'asc' }],
       take: limit,
     });
+    this.toCache(key, result);
+    return result;
   }
 
   async getStats() {
+    const cached = this.fromCache<unknown>('stats');
+    if (cached) return cached;
+
     const latest = await this.prisma.trendingItem.findFirst({ orderBy: { fetchedAt: 'desc' }, select: { fetchedAt: true } });
     if (!latest) return null;
     const batchStart = new Date(latest.fetchedAt.getTime() - 60_000);
@@ -103,7 +125,7 @@ export class TrendingService implements OnModuleInit {
         .map(([genreId, count]) => ({ genreId, count, pct: Math.round((count / filtered.length) * 100) }));
     };
 
-    return {
+    const result = {
       movies,
       shows,
       topMovies,
@@ -112,5 +134,7 @@ export class TrendingService implements OnModuleInit {
       topShowGenres: computeGenres('tv'),
       lastUpdated: latest.fetchedAt.toISOString(),
     };
+    this.toCache('stats', result);
+    return result;
   }
 }
