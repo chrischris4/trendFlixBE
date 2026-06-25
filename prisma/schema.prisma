@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model TrendingItem {
+  id               String   @id @default(cuid())
+  tmdbId           Int
+  type             String   // "movie" or "tv"
+  title            String
+  overview         String?
+  posterPath       String?
+  backdropPath     String?
+  popularity       Float?
+  voteAverage      Float?
+  voteCount        Int?
+  releaseDate      String?
+  genreIds         Int[]
+  originalLanguage String?
+  rank             Int
+  fetchedAt        DateTime @default(now())
+
+  @@index([type, fetchedAt])
+  @@index([tmdbId])
+  @@map("trending_items")
+}
+
+model BlogArticle {
+  id           Int      @id @default(autoincrement())
+  tmdbId       Int?
+  type         String?  // "movie" or "tv"
+  title        String
+  channelTitle String
+  posterPath   String?
+  viewCount    BigInt?
+  countryCount Int?
+  weekOf       DateTime
+  editorialFr  String   @db.Text
+  editorialEn  String   @db.Text
+  createdAt    DateTime @default(now())
+
+  @@map("blog_articles")
+}

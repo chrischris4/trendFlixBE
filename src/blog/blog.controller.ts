@@ -1,0 +1,31 @@
+import { Controller, Get, Post, Patch, Delete, Body, Param, UseGuards, ParseIntPipe } from '@nestjs/common';
+import { BlogService, CreateBlogArticleDto } from './blog.service';
+import { ApiKeyGuard } from '../auth/guards/api-key.guard';
+
+@Controller('blog')
+export class BlogController {
+  constructor(private readonly blogService: BlogService) {}
+
+  @Get()
+  findAll() {
+    return this.blogService.findAll();
+  }
+
+  @Post()
+  @UseGuards(ApiKeyGuard)
+  create(@Body() dto: CreateBlogArticleDto) {
+    return this.blogService.create(dto);
+  }
+
+  @Patch(':id')
+  @UseGuards(ApiKeyGuard)
+  update(@Param('id', ParseIntPipe) id: number, @Body() dto: Partial<CreateBlogArticleDto>) {
+    return this.blogService.update(id, dto);
+  }
+
+  @Delete(':id')
+  @UseGuards(ApiKeyGuard)
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.blogService.remove(id);
+  }
+}

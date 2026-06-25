@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: trendflix_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: trendflix
+      POSTGRES_PASSWORD: trendflix_secret
+      POSTGRES_DB: trendflix
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
