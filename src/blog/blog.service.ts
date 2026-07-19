@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
+import { Cron, CronExpression } from '@nestjs/schedule';
 import { PrismaService } from '../prisma/prisma.service';
 
 export interface CreateBlogArticleDto {
@@ -12,10 +13,13 @@ export interface CreateBlogArticleDto {
   weekOf: string;
   editorialFr: string;
   editorialEn: string;
+  published?: boolean;
 }
 
 @Injectable()
 export class BlogService {
+  private readonly logger = new Logger(BlogService.name);
+
   constructor(private prisma: PrismaService) {}
 
   private serialize(a: Awaited<ReturnType<typeof this.prisma.blogArticle.findFirst>>) {
@@ -24,8 +28,37 @@ export class BlogService {
   }
 
   async findAll() {
-    const rows = await this.prisma.blogArticle.findMany({ orderBy: { createdAt: 'desc' } });
+    const rows = await this.prisma.blogArticle.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+    });
     return rows.map(a => this.serialize(a));
+  }
+
+  async findAllAdmin() {
+    const rows = await this.prisma.blogArticle.findMany({
+      orderBy: [{ published: 'asc' }, { createdAt: 'desc' }],
+    });
+    return rows.map(a => this.serialize(a));
+  }
+
+  // Publie automatiquement un brouillon par jour, à 9h UTC (11h Paris l'été).
+  // Les dates weekOf/createdAt sont mises au jour de publication pour que
+  // le blog paraisse alimenté régulièrement.
+  @Cron(CronExpression.EVERY_DAY_AT_9AM)
+  async publishNext() {
+    const draft = await this.prisma.blogArticle.findFirst({
+      where: { published: false },
+      orderBy: { id: 'asc' },
+    });
+    if (!draft) return;
+
+    const now = new Date();
+    await this.prisma.blogArticle.update({
+      where: { id: draft.id },
+      data: { published: true, weekOf: now, createdAt: now },
+    });
+    this.logger.log(`Article #${draft.id} publié automatiquement : ${draft.title}`);
   }
 
   async create(dto: CreateBlogArticleDto) {
@@ -41,6 +74,7 @@ export class BlogService {
         weekOf: new Date(dto.weekOf),
         editorialFr: dto.editorialFr,
         editorialEn: dto.editorialEn,
+        published: dto.published ?? true,
       },
     });
     return this.serialize(a);
@@ -57,6 +91,7 @@ export class BlogService {
         ...(dto.weekOf !== undefined && { weekOf: new Date(dto.weekOf) }),
         ...(dto.editorialFr !== undefined && { editorialFr: dto.editorialFr }),
         ...(dto.editorialEn !== undefined && { editorialEn: dto.editorialEn }),
+        ...(dto.published !== undefined && { published: dto.published }),
       },
     });
     return this.serialize(a);

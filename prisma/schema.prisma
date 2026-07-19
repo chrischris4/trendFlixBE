@@ -41,6 +41,7 @@ model BlogArticle {
   weekOf       DateTime
   editorialFr  String   @db.Text
   editorialEn  String   @db.Text
+  published    Boolean  @default(true)
   createdAt    DateTime @default(now())
 
   @@map("blog_articles")

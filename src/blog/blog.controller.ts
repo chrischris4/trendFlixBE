@@ -11,6 +11,12 @@ export class BlogController {
     return this.blogService.findAll();
   }
 
+  @Get('all')
+  @UseGuards(ApiKeyGuard)
+  findAllAdmin() {
+    return this.blogService.findAllAdmin();
+  }
+
   @Post()
   @UseGuards(ApiKeyGuard)
   create(@Body() dto: CreateBlogArticleDto) {
