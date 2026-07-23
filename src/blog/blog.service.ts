@@ -163,7 +163,33 @@ export class BlogService {
   // le blog paraisse alimenté régulièrement.
   @Cron(CronExpression.EVERY_DAY_AT_9AM)
   async publishNext() {
+    const lastPublished = await this.prisma.blogArticle.findFirst({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+      select: { format: true },
+    });
+    const preferredFormats = Object.values(BlogArticleFormat).filter(
+      format => format !== BlogArticleFormat.SIMPLE && format !== lastPublished?.format,
+    );
+
+    // Les formats éditoriaux structurés passent avant les anciens articles
+    // simples, sans répéter le même format deux jours de suite.
     const draft = await this.prisma.blogArticle.findFirst({
+      where: {
+        published: false,
+        ...(preferredFormats.length ? { format: { in: preferredFormats } } : {}),
+      },
+      orderBy: { id: 'asc' },
+    }) ?? await this.prisma.blogArticle.findFirst({
+      where: { published: false, format: { not: BlogArticleFormat.SIMPLE } },
+      orderBy: { id: 'asc' },
+    }) ?? await this.prisma.blogArticle.findFirst({
+      where: {
+        published: false,
+        ...(lastPublished ? { format: { not: lastPublished.format } } : {}),
+      },
+      orderBy: { id: 'asc' },
+    }) ?? await this.prisma.blogArticle.findFirst({
       where: { published: false },
       orderBy: { id: 'asc' },
     });
