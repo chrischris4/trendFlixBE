@@ -7,10 +7,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum BlogArticleFormat {
+  SIMPLE
+  SUGGESTION
+  TOP_10
+  GUIDE
+  DATA_ANALYSIS
+  FACE_TO_FACE
+  PORTRAIT
+  RETROSPECTIVE
+}
+
 model TrendingItem {
   id               String   @id @default(cuid())
   tmdbId           Int
-  type             String   // "movie" or "tv"
+  type             String // "movie" or "tv"
   title            String
   overview         String?
   posterPath       String?
@@ -30,19 +41,48 @@ model TrendingItem {
 }
 
 model BlogArticle {
-  id           Int      @id @default(autoincrement())
+  id           Int               @id @default(autoincrement())
+  format       BlogArticleFormat @default(SIMPLE)
   tmdbId       Int?
-  type         String?  // "movie" or "tv"
+  type         String? // "movie" or "tv"
   title        String
+  titleFr      String?
+  titleEn      String?
   channelTitle String
   posterPath   String?
   viewCount    BigInt?
   countryCount Int?
   weekOf       DateTime
-  editorialFr  String   @db.Text
-  editorialEn  String   @db.Text
-  published    Boolean  @default(true)
-  createdAt    DateTime @default(now())
+  editorialFr  String            @db.Text
+  editorialEn  String            @db.Text
+  introFr      String?           @db.Text
+  introEn      String?           @db.Text
+  conclusionFr String?           @db.Text
+  conclusionEn String?           @db.Text
+  published    Boolean           @default(true)
+  createdAt    DateTime          @default(now())
+  items        BlogArticleItem[]
 
   @@map("blog_articles")
+}
+
+model BlogArticleItem {
+  id             Int         @id @default(autoincrement())
+  articleId      Int
+  position       Int
+  tmdbId         Int?
+  type           String?
+  title          String
+  channelTitle   String?
+  posterPath     String?
+  countryCount   Int?
+  sectionTitleFr String?
+  sectionTitleEn String?
+  sectionTextFr  String?     @db.Text
+  sectionTextEn  String?     @db.Text
+  article        BlogArticle @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@unique([articleId, position])
+  @@index([tmdbId])
+  @@map("blog_article_items")
 }
