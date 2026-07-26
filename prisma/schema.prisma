@@ -37,6 +37,9 @@ model TrendingItem {
 
   @@index([type, fetchedAt])
   @@index([tmdbId])
+  // La recherche du dernier relevé trie sur fetchedAt sans filtrer : l'index
+  // composite ci-dessus ne peut pas la servir.
+  @@index([fetchedAt])
   @@map("trending_items")
 }
 

@@ -3,6 +3,11 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 import { PrismaService } from '../prisma/prisma.service';
 import { TmdbService } from '../tmdb/tmdb.service';
 
+// Fenetre d'historique conservee. 90 jours permettent des analyses d'evolution
+// sur un trimestre glissant pour ~1 $/mois de stockage supplementaire ; les
+// articles publies survivent de toute facon a la purge.
+const RETENTION_DAYS = 90;
+
 const CACHE_TTL = 60 * 60 * 1000;
 
 @Injectable()
@@ -52,7 +57,7 @@ export class TrendingService implements OnModuleInit {
   }
 
   private async cleanOld() {
-    const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const cutoff = new Date(Date.now() - RETENTION_DAYS * 24 * 60 * 60 * 1000);
     const { count } = await this.prisma.trendingItem.deleteMany({ where: { fetchedAt: { lt: cutoff } } });
     if (count > 0) this.logger.log(`${count} anciens items supprimés`);
   }

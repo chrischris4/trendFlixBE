@@ -1,0 +1,305 @@
+[
+  {
+    "format": "DATA_ANALYSIS",
+    "titleFr": "Popularité contre note : deux classements qui ne disent pas la même chose",
+    "titleEn": "Popularity vs Rating: Two Rankings That Tell Different Stories",
+    "title": "Popularité contre note : deux classements qui ne disent pas la même chose",
+    "channelTitle": "Analyse des données TMDB",
+    "weekOf": "2026-07-26",
+    "published": false,
+    "introFr": "Le classement des films repose sur un score de popularité, c’est-à-dire un volume d’attention mesuré en temps réel. La note, elle, mesure la satisfaction de ceux qui ont déjà vu le film. Le relevé du 26 juillet 2026 montre que ces deux indicateurs se contredisent presque systématiquement. Moana affiche 574,72 de popularité pour une note de 5,9, tandis que Michael obtient 8,69 avec seulement 120,57 de popularité. Voici comment lire cet écart sans se tromper de conclusion.",
+    "introEn": "The film ranking is built on a popularity score, meaning attention volume measured in real time. A rating measures the satisfaction of people who have already watched. The 26 July 2026 snapshot shows those two indicators contradicting each other almost systematically. Moana posts 574.72 popularity for a 5.9 rating, while Michael reaches 8.69 with only 120.57 popularity. Here is how to read that gap without drawing the wrong conclusion.",
+    "conclusionFr": "Le nombre de votants est la variable qui réconcilie tout. Moana affiche 5,9 sur 139 votes, un chiffre trop faible pour être stable ; Project Hail Mary affiche 8,659 sur 6 376 votes, un chiffre qui ne bougera pratiquement plus. Une note élevée obtenue sur quelques dizaines de bulletins signale l’enthousiasme d’un public déjà convaincu, pas la qualité perçue par le grand public. Inversement, une popularité élevée n’est jamais une opinion : c’est la trace d’une campagne, d’une sortie récente ou d’un débat en cours. The Odyssey en est l’exemple parfait, avec 994,26 de popularité, presque le double du deuxième, et une note de 7,959 très correcte mais pas exceptionnelle. La bonne méthode consiste donc à lire les deux colonnes ensemble et à ne jamais comparer deux notes sans comparer leurs volumes. Un film à 8,7 sur 3 675 votes et un film à 7,6 sur 12 votes ne se trouvent pas dans le même univers statistique.",
+    "conclusionEn": "Vote count is the variable that reconciles everything. Moana shows 5.9 from 139 votes, far too few to be stable; Project Hail Mary shows 8.659 from 6,376 votes, a figure that will barely move again. A high rating built on a few dozen ballots signals enthusiasm from an already-converted audience, not quality as perceived by the wider public. Conversely, high popularity is never an opinion: it is the trace of a campaign, a recent release or an ongoing debate. The Odyssey is the perfect example, with 994.26 popularity — nearly double the runner-up — and a solid but unexceptional 7.959 rating. The right method is to read both columns together and never compare two ratings without comparing their sample sizes. A film at 8.7 from 3,675 votes and a film at 7.6 from 12 votes do not live in the same statistical universe.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 1368337,
+        "type": "movie",
+        "title": "The Odyssey",
+        "channelTitle": "Aventure épique",
+        "posterPath": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+        "sectionTitleFr": "L’exception qui domine les deux colonnes",
+        "sectionTitleEn": "The Exception That Leads Both Columns",
+        "sectionTextFr": "Avec 994,26 de popularité, The Odyssey écrase le classement : le deuxième film culmine à 574,49. Sa note de 7,959 sur 1 257 votes est solide sans être remarquable. C’est le profil typique d’un film sorti le 15 juillet et encore en pleine exposition, où l’attention précède largement le jugement.",
+        "sectionTextEn": "At 994.26 popularity, The Odyssey dominates the ranking: the second film peaks at 574.49. Its 7.959 rating from 1,257 votes is solid without being remarkable. That is the typical profile of a film released on 15 July and still at full exposure, where attention runs well ahead of judgement."
+      },
+      {
+        "position": 2,
+        "tmdbId": 1108427,
+        "type": "movie",
+        "title": "Moana",
+        "channelTitle": "Disney",
+        "posterPath": "/zKVgiv5qHCvCLT4A2ymJi5QeXDH.jpg",
+        "sectionTitleFr": "Beaucoup d’attention, peu d’adhésion",
+        "sectionTitleEn": "Plenty of Attention, Little Support",
+        "sectionTextFr": "Moana obtient 574,72 de popularité, le meilleur score du classement après The Odyssey, pour une note de 5,9 seulement. L’échantillon de 139 votes reste minuscule au regard de l’exposition du titre. Cet écart signale un film très vu, très commenté, mais dont l’accueil ne suit pas la campagne.",
+        "sectionTextEn": "Moana posts 574.72 popularity, the best score after The Odyssey, for a rating of just 5.9. Its 139-vote sample stays tiny compared with the title’s exposure. The gap signals a film that is widely seen and widely discussed, but whose reception is not following the campaign."
+      },
+      {
+        "position": 3,
+        "tmdbId": 1275779,
+        "type": "movie",
+        "title": "Disclosure Day",
+        "channelTitle": "Science-fiction",
+        "posterPath": "/AnJ8IQJI23hNpYXVNaythu061Ru.jpg",
+        "sectionTitleFr": "L’équilibre rare entre les deux mesures",
+        "sectionTitleEn": "The Rare Balance Between Both Measures",
+        "sectionTextFr": "Disclosure Day réunit 574,49 de popularité et 7,184 sur 1 487 votes, ce qui en fait le seul film du haut de tableau à tenir les deux indicateurs à la fois. Sorti le 10 juin, il bénéficie d’un recul suffisant pour que la note soit crédible. C’est la définition la plus proche d’un succès sain dans ce relevé.",
+        "sectionTextEn": "Disclosure Day combines 574.49 popularity with 7.184 from 1,487 votes, making it the only film near the top holding both indicators at once. Released on 10 June, it has enough distance for the rating to be credible. This is the closest thing to a healthy success in this snapshot."
+      },
+      {
+        "position": 4,
+        "tmdbId": 1339713,
+        "type": "movie",
+        "title": "Obsession",
+        "channelTitle": "Horreur",
+        "posterPath": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+        "sectionTitleFr": "Le meilleur rapport note-volume du top 5",
+        "sectionTitleEn": "The Best Rating-to-Volume Ratio in the Top Five",
+        "sectionTextFr": "Obsession affiche 8,241 sur 3 584 votes tout en conservant 415,12 de popularité, plus de deux mois après sa sortie du 13 mai. Le nombre de votants rend la note fiable, ce qui est rare pour un film d’horreur. Le genre pénalise habituellement les moyennes, ici il les tire vers le haut.",
+        "sectionTextEn": "Obsession posts 8.241 from 3,584 votes while keeping 415.12 popularity, more than two months after its 13 May release. The vote count makes the rating reliable, which is unusual for horror. The genre normally drags averages down; here it pulls them up."
+      },
+      {
+        "position": 5,
+        "tmdbId": 687163,
+        "type": "movie",
+        "title": "Project Hail Mary",
+        "channelTitle": "Science-fiction",
+        "posterPath": "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+        "sectionTitleFr": "La note la plus solide du classement",
+        "sectionTitleEn": "The Most Solid Rating in the Ranking",
+        "sectionTextFr": "6 376 votes pour une moyenne de 8,659 : aucun autre film du relevé ne possède un échantillon aussi large à ce niveau de satisfaction. Sa popularité de 194,22 paraît faible en comparaison, mais le film est sorti le 15 mars. Quatre mois après, la popularité redescend toujours, la note ne redescend jamais.",
+        "sectionTextEn": "6,376 votes for an 8.659 average: no other film in the snapshot combines that sample size with that level of satisfaction. Its 194.22 popularity looks low by comparison, but the film opened on 15 March. Four months on, popularity always falls back; ratings never do."
+      },
+      {
+        "position": 6,
+        "tmdbId": 936075,
+        "type": "movie",
+        "title": "Michael",
+        "channelTitle": "Biopic musical",
+        "posterPath": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+        "sectionTitleFr": "La meilleure note, la plus faible exposition",
+        "sectionTitleEn": "The Best Rating, the Weakest Exposure",
+        "sectionTextFr": "Michael obtient la meilleure note du classement, 8,693 sur 3 675 votes, avec une popularité de seulement 120,57. Sorti le 22 avril, il illustre le cycle complet : l’attention s’est déplacée, la satisfaction est restée. Un film noté aussi haut par autant de spectateurs mérite une place que le classement de popularité ne lui donne plus.",
+        "sectionTextEn": "Michael holds the best rating in the ranking, 8.693 from 3,675 votes, with popularity of only 120.57. Released on 22 April, it illustrates the full cycle: attention has moved on, satisfaction has stayed. A film rated that highly by that many viewers deserves a place the popularity ranking no longer gives it."
+      }
+    ]
+  },
+  {
+    "format": "FACE_TO_FACE",
+    "titleFr": "Silo contre House of the Dragon, la patience contre le fracas",
+    "titleEn": "Silo vs House of the Dragon: Patience Against Spectacle",
+    "title": "Silo contre House of the Dragon, la patience contre le fracas",
+    "channelTitle": "Apple TV+ / HBO",
+    "weekOf": "2026-07-26",
+    "published": false,
+    "introFr": "Les deux premières places du classement séries sont occupées par deux projets que tout oppose. Silo est en tête avec 223,04 de popularité et une note de 8,174 sur 2 310 votes. House of the Dragon suit avec 334,11 de popularité et 8,373 sur 6 701 votes. La série la mieux notée et la plus votée n’est donc pas première, ce qui rend la comparaison plus intéressante qu’un simple duel de scores.",
+    "introEn": "The top two places in the series ranking are held by two projects with nothing in common. Silo leads with 223.04 popularity and a rating of 8.174 from 2,310 votes. House of the Dragon follows at 334.11 popularity and 8.373 from 6,701 votes. The better-rated, more-voted series is not in first place, which makes the comparison more interesting than a simple score duel.",
+    "conclusionFr": "Le vrai enseignement de ce face-à-face tient dans l’écart de votes : 6 701 contre 2 310, soit près du triple. House of the Dragon possède une base installée trois fois plus large, héritée d’une franchise vieille de quinze ans, et elle conserve malgré tout une note supérieure. Silo, elle, atteint presque le même niveau de satisfaction avec un public trois fois plus petit et sans univers préexistant à exploiter. Les deux séries prouvent la même chose par des chemins opposés : la fidélité se construit soit par accumulation d’histoire, soit par cohérence de ton. Pour un spectateur qui doit choisir ce soir, la question n’est donc pas de savoir laquelle est meilleure, mais de quel type d’engagement il dispose. Silo demande de la concentration et récompense la lenteur. House of the Dragon demande de la mémoire et récompense la connaissance des lignées. Les deux réussites sont réelles, elles ne s’adressent simplement pas au même état d’esprit.",
+    "conclusionEn": "The real lesson of this face-off lies in the vote gap: 6,701 against 2,310, nearly triple. House of the Dragon holds an installed base three times larger, inherited from a fifteen-year-old franchise, and still keeps the higher rating. Silo reaches almost the same satisfaction level with a third of the audience and no pre-existing universe to draw on. Both series prove the same point by opposite routes: loyalty is built either by accumulated history or by consistency of tone. For a viewer choosing tonight, the question is not which one is better, but what kind of attention they have available. Silo demands concentration and rewards slowness. House of the Dragon demands memory and rewards knowledge of bloodlines. Both successes are real; they simply address different states of mind.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 125988,
+        "type": "tv",
+        "title": "Silo",
+        "channelTitle": "Apple TV+",
+        "posterPath": "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg",
+        "sectionTitleFr": "Silo, première place sans effets de manche",
+        "sectionTitleEn": "Silo: First Place Without Fanfare",
+        "sectionTextFr": "Silo prend la tête du classement avec 223,04 de popularité et 8,174 sur 2 310 votes, alors que la série est diffusée depuis mai 2023. Sa mécanique repose sur une contrainte unique, un monde clos où toute question posée peut coûter la vie, ce qui rend chaque révélation coûteuse.\n\nCe modèle produit une audience lente mais durable. Une série de science-fiction sociale n’a pas de scène de bataille à mettre en avant, elle doit convaincre par la rigueur de son univers. La note de 8,174 après trois ans de diffusion montre que la promesse tient sans usure.\n\nSa faiblesse est symétrique : avec 2 310 votes seulement, Silo reste une série moins massive que la plupart des titres qui l’entourent. Sa première place s’explique par une actualité récente, pas par une domination culturelle installée.",
+        "sectionTextEn": "Silo takes the lead with 223.04 popularity and 8.174 from 2,310 votes, having aired since May 2023. Its mechanism rests on a single constraint: a closed world where asking a question can cost your life, which makes every revelation expensive.\n\nThat model produces a slow but durable audience. A social science-fiction series has no battle sequence to advertise; it has to convince through the rigour of its world. A rating of 8.174 after three years shows the promise has not worn out.\n\nIts weakness is symmetrical: with only 2,310 votes, Silo remains smaller than most titles around it. Its first place comes from recent activity rather than installed cultural dominance."
+      },
+      {
+        "position": 2,
+        "tmdbId": 94997,
+        "type": "tv",
+        "title": "House of the Dragon",
+        "channelTitle": "HBO",
+        "posterPath": "/7V0Ebks0GgpKvQ7QbLAIdX5dos4.jpg",
+        "sectionTitleFr": "House of the Dragon, la puissance de l’héritage",
+        "sectionTitleEn": "House of the Dragon: The Power of Inheritance",
+        "sectionTextFr": "Deuxième au classement, la série affiche pourtant les meilleurs chiffres bruts : 334,11 de popularité et 8,373 sur 6 701 votes, soit près du triple de l’échantillon de Silo. Diffusée depuis août 2022, elle bénéficie d’un univers construit bien avant elle.\n\nCet héritage est un accélérateur et un piège. Il garantit une audience immédiate à chaque saison, mais impose des comparaisons permanentes avec la série mère. La note élevée montre que la comparaison est aujourd’hui soutenue sans difficulté.\n\nSon avantage décisif tient à la densité du casting et au budget visible à l’image. Là où Silo raconte l’enfermement, House of the Dragon raconte la dislocation d’une famille régnante, un sujet qui autorise le spectacle sans renoncer à l’intrigue politique.",
+        "sectionTextEn": "Ranked second, the series nonetheless posts the strongest raw figures: 334.11 popularity and 8.373 from 6,701 votes, nearly triple Silo’s sample. On air since August 2022, it inherits a universe built long before it existed.\n\nThat inheritance is both an accelerator and a trap. It guarantees an immediate audience for every season, but imposes permanent comparison with the parent show. The high rating indicates the comparison is currently being sustained without strain.\n\nIts decisive advantage is cast density and budget visible on screen. Where Silo tells a story of confinement, House of the Dragon tells the disintegration of a ruling family, a subject that allows spectacle without abandoning political intrigue."
+      }
+    ]
+  },
+  {
+    "format": "PORTRAIT",
+    "titleFr": "Portrait d’une industrie : la Corée place quatre séries d’un coup",
+    "titleEn": "Portrait of an Industry: Korea Places Four Series at Once",
+    "title": "Portrait d’une industrie : la Corée place quatre séries d’un coup",
+    "channelTitle": "Séries coréennes",
+    "weekOf": "2026-07-26",
+    "published": false,
+    "introFr": "Le classement des séries du 26 juillet 2026 compte quatre productions coréennes, dont deux dans les six premières places. Aucun autre pays hors États-Unis n’en place plus d’une. Le plus intéressant n’est pas le nombre mais la variété : action policière, mystère historique, thriller de vengeance et comédie fantastique. Ce portrait s’intéresse à une industrie qui a cessé d’exporter un genre pour exporter une méthode.",
+    "introEn": "The series ranking of 26 July 2026 contains four Korean productions, two of them in the top six. No other country outside the United States places more than one. The interesting part is not the count but the variety: police action, historical mystery, revenge thriller and supernatural comedy. This portrait looks at an industry that has stopped exporting one genre and started exporting a method.",
+    "conclusionFr": "Quatre séries, quatre genres, quatre années de production différentes : la Corée n’occupe pas ce classement grâce à une vague ponctuelle, mais grâce à un système. Trois éléments reviennent dans les quatre titres. D’abord, une saison courte et fermée, qui n’exige pas du spectateur un engagement de plusieurs années. Ensuite, un mélange assumé de registres, la comédie romantique de Spooky in Love voisinant avec le fantastique sans que l’un annule l’autre. Enfin, des notes élevées obtenues sur de petits échantillons, 8,4 pour A Shop for Killers et Spooky in Love, 8 pour The East Palace, ce qui indique un public très engagé mais encore en croissance à l’international. C’est précisément ce dernier point qui rend cette présence intéressante à suivre. Avec 39, 40 et 12 votes, ces séries n’ont pas encore rencontré le grand public occidental ; elles sont en train de le faire. Le classement enregistre un mouvement en cours, pas un résultat acquis.",
+    "conclusionEn": "Four series, four genres, four different production years: Korea does not occupy this ranking through a passing wave but through a system. Three elements recur in all four titles. First, a short, closed season that does not demand a multi-year commitment from viewers. Second, a deliberate mixing of registers, with the romantic comedy of Spooky in Love sitting beside the supernatural without either cancelling the other. Third, high ratings drawn from small samples — 8.4 for A Shop for Killers and Spooky in Love, 8 for The East Palace — indicating a highly engaged audience still growing internationally. That last point is what makes this presence worth following. With 39, 40 and 12 votes, these series have not yet met the wider Western audience; they are in the process of doing so. The ranking is recording a movement underway, not a settled result.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 296206,
+        "type": "tv",
+        "title": "Agent Kim Reactivated",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/jruaZAm1KjkFRhgRcdF8tqakhpH.jpg",
+        "sectionTitleFr": "La cinquième place, avec 39 votes seulement",
+        "sectionTitleEn": "Fifth Place, on Just 39 Votes",
+        "sectionTextFr": "Agent Kim Reactivated est la mieux classée des quatre, cinquième, avec 130,81 de popularité et une note de 7,269. L’échantillon de 39 votes reste minuscule : la série intéresse fortement, elle n’a pas encore été jugée massivement. Diffusée depuis le 26 juin, elle combine action, polar et drame, un triptyque devenu la signature du format coréen contemporain.",
+        "sectionTextEn": "Agent Kim Reactivated is the best placed of the four, fifth, with 130.81 popularity and a 7.269 rating. Its 39-vote sample is tiny: the series attracts strong interest but has not yet been judged at scale. On air since 26 June, it combines action, crime and drama, the triptych that has become the signature of the contemporary Korean format."
+      },
+      {
+        "position": 2,
+        "tmdbId": 279323,
+        "type": "tv",
+        "title": "The East Palace",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/yfYohBszGqoAW8oM0qydOtJ4kPh.jpg",
+        "sectionTitleFr": "Le mystère historique qui monte le plus vite",
+        "sectionTitleEn": "The Fastest-Rising Historical Mystery",
+        "sectionTextFr": "Sixième avec 104,95 de popularité et une note de 8 sur 40 votes, The East Palace n’est diffusée que depuis le 17 juillet. Atteindre ce niveau en neuf jours suppose une reprise immédiate par les publics étrangers. Son mélange de mystère, d’action et de reconstitution historique correspond au genre le plus exporté par la Corée après le thriller.",
+        "sectionTextEn": "Sixth with 104.95 popularity and a rating of 8 from 40 votes, The East Palace has only been airing since 17 July. Reaching that level in nine days implies immediate pickup by foreign audiences. Its blend of mystery, action and historical reconstruction matches the genre Korea exports most after the thriller."
+      },
+      {
+        "position": 3,
+        "tmdbId": 215072,
+        "type": "tv",
+        "title": "A Shop for Killers",
+        "channelTitle": "Disney+",
+        "posterPath": "/7yUY1HUyQuybbvkAAhLzQ7x1l9g.jpg",
+        "sectionTitleFr": "La preuve que le catalogue tient dans la durée",
+        "sectionTitleEn": "Proof the Catalogue Holds Over Time",
+        "sectionTextFr": "Diffusée en janvier 2024, A Shop for Killers reste huitième avec 74,60 de popularité et 8,4 sur 183 votes, la meilleure note du groupe. Deux ans et demi plus tard, la série continue d’être découverte. C’est la fonction la plus sous-estimée de l’industrie coréenne, produire des titres qui ne dépendent pas de l’actualité pour circuler.",
+        "sectionTextEn": "Released in January 2024, A Shop for Killers still ranks eighth with 74.60 popularity and 8.4 from 183 votes, the best rating in the group. Two and a half years on, the series is still being discovered. That is the most underrated function of the Korean industry: producing titles that do not depend on news cycles to travel."
+      },
+      {
+        "position": 4,
+        "tmdbId": 298610,
+        "type": "tv",
+        "title": "Spooky in Love",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/acVOH8Pr5LEZ7WKZCbzwNuHVr9x.jpg",
+        "sectionTitleFr": "La comédie qui complète le tableau",
+        "sectionTitleEn": "The Comedy That Completes the Picture",
+        "sectionTextFr": "Avec 39,71 de popularité et 8,4 sur 12 votes, Spooky in Love ferme la marche mais apporte l’élément décisif de ce portrait : la comédie. Diffusée depuis le 18 juillet, elle associe humour, fantastique et drame sentimental. Sa présence montre que l’exportation coréenne ne se limite plus au registre sombre qui l’a fait connaître.",
+        "sectionTextEn": "With 39.71 popularity and 8.4 from 12 votes, Spooky in Love comes last but supplies the decisive element of this portrait: comedy. Airing since 18 July, it combines humour, the supernatural and romantic drama. Its presence shows Korean exports are no longer confined to the dark register that made them famous."
+      }
+    ]
+  },
+  {
+    "format": "RETROSPECTIVE",
+    "titleFr": "Une semaine sans blockbuster, six sorties qui comptent quand même",
+    "titleEn": "A Week Without a Blockbuster, and Six Releases That Still Matter",
+    "title": "Une semaine sans blockbuster, six sorties qui comptent quand même",
+    "channelTitle": "Sorties du 20 au 26 juillet 2026",
+    "weekOf": "2026-07-26",
+    "published": false,
+    "introFr": "Entre le 20 et le 26 juillet 2026, aucune grande production américaine n’est sortie. Le classement s’est donc rempli autrement : un film d’action thaïlandais, un thriller lusophone, un long-métrage hispanophone, une comédie indépendante et deux séries. Cette semaine creuse est l’occasion idéale de regarder ce qui circule quand les studios majeurs laissent la place vide.",
+    "introEn": "Between 20 and 26 July 2026, no major American production was released. The ranking filled up differently: a Thai action film, a Portuguese-language thriller, a Spanish-language feature, an independent comedy and two series. This quiet week is the ideal moment to look at what circulates when the major studios leave the field open.",
+    "conclusionFr": "Six sorties, quatre langues de production, et un enseignement qui revient à chaque semaine creuse : la diversité n’est pas produite par l’offre, elle est révélée par l’absence. Ces films et séries existaient avant le 20 juillet, mais ils n’auraient pas atteint le classement face à une sortie majeure. Le second enseignement concerne les notes. Stuart Fails to Save the Universe obtient 9 sur 5 votes, The Truthers 7 sur 3, Soy Luna 7,643 sur 7 : aucune de ces moyennes n’a la moindre valeur statistique pour l’instant. Elles indiquent seulement qu’un premier public est arrivé et qu’il est content. Le troisième enseignement est le plus concret pour un spectateur. Trois de ces six titres, le film thaïlandais, le thriller lusophone et le film hispanophone, appartiennent au même registre policier. Une semaine sans blockbuster est donc, presque mécaniquement, une bonne semaine pour le polar international.",
+    "conclusionEn": "Six releases, four production languages, and one lesson that returns with every quiet week: diversity is not created by supply, it is revealed by absence. These films and series existed before 20 July, but they would not have reached the ranking against a major release. The second lesson concerns ratings. Stuart Fails to Save the Universe scores 9 from 5 votes, The Truthers 7 from 3, Soy Luna 7.643 from 7: none of those averages carries statistical weight yet. They only indicate that a first audience has arrived and is satisfied. The third lesson is the most practical for viewers. Three of these six titles — the Thai film, the Portuguese-language thriller and the Spanish-language feature — belong to the same crime register. A week without a blockbuster is therefore, almost mechanically, a good week for international crime cinema.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 1630409,
+        "type": "movie",
+        "title": "The Debt Collector",
+        "channelTitle": "Film thaïlandais",
+        "posterPath": "/qADBUb5ybrkRVGZEFF8Z4RuOwys.jpg",
+        "sectionTitleFr": "20 juillet, la meilleure entrée de la semaine",
+        "sectionTitleEn": "20 July: The Week’s Strongest Entry",
+        "sectionTextFr": "Sorti le 20 juillet, ce film d’action thaïlandais atteint 83,30 de popularité, très loin devant les autres nouveautés de la semaine. Sa note de 7 repose sur 11 votes seulement, elle ne veut pas encore dire grand-chose. Le trio action, thriller et polar reste le format le plus exportable du cinéma asiatique, parce qu’il se comprend sans référence culturelle préalable.",
+        "sectionTextEn": "Released on 20 July, this Thai action film reaches 83.30 popularity, far ahead of every other new title this week. Its rating of 7 rests on just 11 votes and means little for now. The action-thriller-crime combination remains the most exportable format in Asian cinema, because it requires no prior cultural reference."
+      },
+      {
+        "position": 2,
+        "tmdbId": 1487861,
+        "type": "movie",
+        "title": "Elize: Shadows of a Woman",
+        "channelTitle": "Thriller lusophone",
+        "posterPath": "/l3wevYWTpiZSUEM5B0Q8c21ALAD.jpg",
+        "sectionTitleFr": "22 juillet, un fait divers porté à l’écran",
+        "sectionTitleEn": "22 July: A News Story Brought to Screen",
+        "sectionTextFr": "Deuxième nouveauté de la semaine avec 45,28 de popularité, ce thriller lusophone obtient 6,237 sur 19 votes. C’est la seule note du groupe qui commence à ressembler à un jugement, même sur un échantillon encore réduit. Son mélange de thriller, de crime et de drame le place directement dans le registre dominant de la semaine.",
+        "sectionTextEn": "The week’s second new entry at 45.28 popularity, this Portuguese-language thriller scores 6.237 from 19 votes. It is the only rating in the group beginning to resemble a judgement, even on a still-small sample. Its blend of thriller, crime and drama places it squarely in the week’s dominant register."
+      },
+      {
+        "position": 3,
+        "tmdbId": 287620,
+        "type": "tv",
+        "title": "Stuart Fails to Save the Universe",
+        "channelTitle": "Comédie de science-fiction",
+        "posterPath": "/iQbTbwmLX5Nh1nlH21YUJPWt3Zo.jpg",
+        "sectionTitleFr": "23 juillet, la meilleure note et le plus petit échantillon",
+        "sectionTitleEn": "23 July: The Best Rating and the Smallest Sample",
+        "sectionTextFr": "Cette comédie de science-fiction affiche un 9 sur 10 fondé sur cinq votes, ce qui en fait la note la plus élevée du classement séries et la moins fiable. Sa popularité de 9,97 confirme une exposition confidentielle. À suivre dans quinze jours : c’est le délai habituel pour savoir si un tel score résiste à l’arrivée de quelques centaines de spectateurs.",
+        "sectionTextEn": "This science-fiction comedy shows a 9 out of 10 built on five votes, making it both the highest rating in the series chart and the least reliable. Its 9.97 popularity confirms limited exposure. Worth revisiting in two weeks: that is the usual delay before we know whether such a score survives the arrival of a few hundred viewers."
+      },
+      {
+        "position": 4,
+        "tmdbId": 1361774,
+        "type": "movie",
+        "title": "The Dink",
+        "channelTitle": "Comédie",
+        "posterPath": "/8dq7vaUkXPqwqKxBFW4qJNBWeop.jpg",
+        "sectionTitleFr": "23 juillet, la comédie discrète",
+        "sectionTitleEn": "23 July: The Quiet Comedy",
+        "sectionTextFr": "Avec 5,26 de popularité et 6,3 sur 7 votes, The Dink est la sortie la plus confidentielle du groupe. Elle entre pourtant au classement, ce qui n’arriverait pas une semaine chargée. C’est exactement le type de titre que les périodes creuses rendent visibles, sans garantie que cette visibilité dure au-delà de quelques jours.",
+        "sectionTextEn": "At 5.26 popularity and 6.3 from 7 votes, The Dink is the most obscure release in the group. It still enters the ranking, which would not happen in a busy week. This is precisely the kind of title quiet periods make visible, with no guarantee the visibility lasts beyond a few days."
+      },
+      {
+        "position": 5,
+        "tmdbId": 1659155,
+        "type": "movie",
+        "title": "The Truthers",
+        "channelTitle": "Film hispanophone",
+        "posterPath": "/ltuAheARdaUHbaS8lX1ZPrNOXe5.jpg",
+        "sectionTitleFr": "24 juillet, le complotisme comme sujet",
+        "sectionTitleEn": "24 July: Conspiracy Culture as Subject",
+        "sectionTextFr": "Ce thriller hispanophone mêle drame et mystère, avec 2,52 de popularité et une note de 7 sur 3 votes. L’exposition est presque nulle, mais son sujet en fait la sortie la plus contemporaine de la semaine. Les films qui traitent de la circulation des fausses informations sont rares, et ils se sont longtemps limités au documentaire.",
+        "sectionTextEn": "This Spanish-language thriller mixes drama and mystery, with 2.52 popularity and a rating of 7 from 3 votes. Exposure is close to zero, yet its subject makes it the week’s most contemporary release. Films dealing with the circulation of false information are rare, and for a long time they were confined to documentary."
+      },
+      {
+        "position": 6,
+        "tmdbId": 324434,
+        "type": "tv",
+        "title": "Soy Luna: Let's Roll Again",
+        "channelTitle": "Série jeunesse",
+        "posterPath": "/bxVoTkGOLPYqjA4sAcxPMgspDSz.jpg",
+        "sectionTitleFr": "24 juillet, le retour d’une série culte pour ados",
+        "sectionTitleEn": "24 July: The Return of a Teen Cult Series",
+        "sectionTextFr": "Le retour de Soy Luna obtient 7,643 sur 7 votes pour 3,68 de popularité. Le score de popularité est trompeur : ce type de programme est regardé par un public jeune qui vote peu et commente ailleurs. La franchise ayant marqué toute une génération en Amérique latine, sa remontée mérite d’être observée sur plusieurs semaines plutôt que jugée le jour de sa sortie.",
+        "sectionTextEn": "Soy Luna’s return scores 7.643 from 7 votes with 3.68 popularity. The popularity figure is misleading: this kind of show is watched by a young audience that rates rarely and comments elsewhere. Since the franchise marked an entire generation in Latin America, its comeback deserves to be tracked over several weeks rather than judged on release day."
+      }
+    ]
+  },
+  {
+    "format": "SUGGESTION",
+    "titleFr": "Mushoku Tensei, la série à rattraper cette semaine",
+    "titleEn": "Mushoku Tensei Is This Week’s Series to Catch Up On",
+    "title": "Mushoku Tensei, la série à rattraper cette semaine",
+    "channelTitle": "Animation japonaise",
+    "weekOf": "2026-07-26",
+    "published": false,
+    "introFr": "Notre suggestion de la semaine est Mushoku Tensei: Jobless Reincarnation. La série apparaît au classement avec 159,41 de popularité et une note de 8,466 fondée sur 1 611 votes, l’un des échantillons les plus larges parmi les titres non américains du relevé. Diffusée depuis janvier 2021, elle n’a rien d’une nouveauté, et c’est précisément l’intérêt : cinq ans après ses débuts, elle continue de se classer face à des séries sorties cette semaine.",
+    "introEn": "Our pick of the week is Mushoku Tensei: Jobless Reincarnation. The series appears in the ranking with 159.41 popularity and a rating of 8.466 based on 1,611 votes, one of the largest samples among non-American titles in this snapshot. On air since January 2021, it is not remotely new — which is exactly the point: five years after its debut it still ranks alongside series released this week.",
+    "conclusionFr": "On la conseille aux spectateurs qui acceptent un personnage principal détestable au départ et une progression morale lente, ainsi qu’aux amateurs de mondes construits avec méthode plutôt que par accumulation d’épisodes. Ceux qui cherchent une série confortable, un héros immédiatement sympathique ou un récit qui règle ses questions en une saison devraient passer leur chemin. La note de 8,466 sur 1 611 votes constitue la meilleure garantie disponible dans ce classement : c’est un jugement stabilisé, pas un enthousiasme de sortie. Reste une réserve honnête, la série demande un investissement réel avant de livrer ce qu’elle promet, et ses premiers épisodes rebutent une partie du public. Si vous tenez le premier tiers, vous comprendrez pourquoi elle est toujours là cinq ans après.",
+    "conclusionEn": "Recommend it to viewers willing to accept an initially unlikeable protagonist and a slow moral progression, and to anyone drawn to worlds built with method rather than by accumulating episodes. Those looking for a comfortable watch, an immediately sympathetic hero, or a story that resolves its questions within one season should look elsewhere. The 8.466 rating from 1,611 votes is the strongest guarantee available in this ranking: it is a stabilised judgement, not release-week enthusiasm. One honest reservation remains — the series demands real investment before delivering what it promises, and its opening episodes put off part of the audience. If you make it through the first third, you will understand why it is still here five years later.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 94664,
+        "type": "tv",
+        "title": "Mushoku Tensei: Jobless Reincarnation",
+        "channelTitle": "Animation japonaise",
+        "posterPath": "/gLKOYIMyKlUHW0SVdskhgf9C0yy.jpg",
+        "sectionTitleFr": "Une seconde vie racontée sans complaisance",
+        "sectionTitleEn": "A Second Life Told Without Indulgence",
+        "sectionTextFr": "Mushoku Tensei part d’un point de départ devenu banal dans l’animation japonaise : un homme meurt et renaît dans un monde de magie. Ce qui distingue la série tient à ce qu’elle refuse d’effacer. Le héros ne se réveille pas purifié de sa vie précédente, il en garde les habitudes, la lâcheté et le regard, et le récit ne cherche jamais à excuser cela.\n\nCe choix explique une partie des débats autour de la série, et aussi sa note. Un score de 8,466 sur 1 611 votes est très élevé pour un titre qui provoque un rejet initial chez de nombreux spectateurs. Cela signifie qu’une large majorité de ceux qui sont allés au bout considèrent que la trajectoire justifie le point de départ.\n\nLa construction du monde est l’autre argument. Les règles de la magie, l’économie des royaumes et la géographie sont posées avec une cohérence rare, puis respectées. Rien n’est résolu par une capacité qui apparaîtrait au bon moment, ce qui donne du poids aux scènes de danger.\n\nSa présence au classement le 26 juillet 2026, cinq ans après le début de la diffusion, mérite d’être soulignée. Avec 159,41 de popularité, elle devance des séries sorties dans les dix derniers jours. Une œuvre d’animation qui reste visible aussi longtemps sans actualité de sortie repose sur des recommandations de spectateur à spectateur, pas sur une campagne.\n\nUn dernier point pratique. La série est longue, structurée en saisons et en parties, et sa progression est délibérément lente. Elle convient mieux à un visionnage régulier qu’à une soirée unique. C’est probablement le titre le plus exigeant de notre classement séries cette semaine, et aussi celui dont la note est la mieux établie.",
+        "sectionTextEn": "Mushoku Tensei starts from a premise that has become routine in Japanese animation: a man dies and is reborn into a world of magic. What sets the series apart is what it refuses to erase. The protagonist does not wake up cleansed of his previous life; he keeps its habits, its cowardice and its gaze, and the story never tries to excuse any of it.\n\nThat choice explains part of the debate surrounding the series, and also its rating. A score of 8.466 from 1,611 votes is very high for a title that provokes initial rejection in many viewers. It means a large majority of those who stayed to the end consider the trajectory justifies the starting point.\n\nWorld-building is the other argument. The rules of magic, the economics of its kingdoms and its geography are established with rare consistency, then respected. Nothing is resolved by an ability appearing at the convenient moment, which gives weight to scenes of danger.\n\nIts presence in the ranking on 26 July 2026, five years after the premiere, deserves emphasis. At 159.41 popularity it outranks series released within the past ten days. An animated work that stays visible this long without release-day news relies on viewer-to-viewer recommendation, not on a campaign.\n\nOne practical note. The series is long, structured across seasons and parts, and its progression is deliberately slow. It suits regular viewing far better than a single evening. It is probably the most demanding title in our series ranking this week, and also the one whose rating is best established."
+      }
+    ]
+  }
+]
