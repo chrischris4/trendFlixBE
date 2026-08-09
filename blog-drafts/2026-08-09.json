@@ -1,0 +1,427 @@
+[
+  {
+    "format": "DATA_ANALYSIS",
+    "titleFr": "Deux tiers du classement sont sortis cette année",
+    "titleEn": "Two Thirds of the Chart Was Released This Year",
+    "introFr": "Le relevé du 9 août 2026 porte sur 100 films et 100 séries. En les répartissant par année de sortie, on obtient un déséquilibre spectaculaire : 131 titres datent de 2026, soit 66 % du total, contre 18 pour 2025, 8 pour 2024, 8 pour 2023 et 5 pour 2022. Trente-quatre titres sont entrés dans le classement cette semaine seulement. Un classement de popularité ne mesure donc pas ce que les gens regardent, il mesure ce qui vient de sortir.",
+    "introEn": "The 9 August 2026 snapshot covers 100 films and 100 series. Sorting them by release year produces a striking imbalance: 131 titles are from 2026, or 66 % of the total, against 18 from 2025, 8 from 2024, 8 from 2023 and 5 from 2022. Thirty-four titles entered the ranking this week alone. A popularity chart does not measure what people watch. It measures what has just been released.",
+    "conclusionFr": "Cette structure a une conséquence pratique pour quiconque utilise ce classement. La popularité et la note ne racontent jamais la même histoire, parce qu'elles ne se construisent pas à la même vitesse. La popularité s'effondre en quelques semaines : elle agrège des consultations de fiches, des ajouts en liste, des recherches, autrement dit de l'activité, et l'activité suit la sortie. La note, elle, met des mois à se stabiliser, parce qu'elle exige que les gens aient vu le film et pris la peine de voter. Spider-Man cumule 1 308 votes en deux semaines, Stranger Things en compte 21 601 après dix ans. Le premier chiffre dit qu'un film est visible maintenant, le second qu'une série a été vue par beaucoup de monde. La bonne façon de lire ce classement consiste donc à séparer les deux questions. Pour savoir de quoi on parle cette semaine, la popularité suffit. Pour savoir quoi regarder, il faut aller chercher les titres qui ont survécu à leur année de sortie, et ils sont, ce 9 août, soixante-neuf sur deux cents.",
+    "conclusionEn": "That structure has a practical consequence for anyone using this chart. Popularity and rating never tell the same story, because they do not build at the same speed. Popularity collapses within weeks: it aggregates page views, watchlist additions and searches, which is to say activity, and activity follows the release date. A rating takes months to settle, because it requires that people actually watched the film and bothered to vote. Spider-Man has collected 1,308 votes in two weeks. Stranger Things holds 21,601 after ten years. The first number tells you a film is visible right now, the second tells you a series has genuinely been seen. The right way to read this chart is therefore to separate the two questions. To know what is being talked about this week, popularity is enough. To decide what to watch, you have to look for the titles that survived their release year, and on 9 August there are sixty-nine of them out of two hundred.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 969681,
+        "type": "movie",
+        "title": "Spider-Man: Brand New Day",
+        "channelTitle": "Film américain",
+        "posterPath": "/iPOn6DinuVyLY17YM9mKuPofV08.jpg",
+        "sectionTitleFr": "Premier avec onze jours d'existence",
+        "sectionTitleEn": "First Place, Eleven Days After Release",
+        "sectionTextFr": "Sorti le 29 juillet 2026, le film affiche 1 550,8 points de popularité, soit près du double du deuxième et dix fois la moyenne du top dix. Il n'a pourtant recueilli que 1 308 votes, pour une note de 7,878. Le rapport entre ces deux chiffres résume tout le classement : un titre peut dominer la popularité en ayant été vu par une fraction du public qui a noté les vieux titres du même tableau.",
+        "sectionTextEn": "Released on 29 July 2026, the film shows 1,550.8 popularity points, nearly double the second place and ten times the average of the top ten. It has nonetheless collected only 1,308 votes, for a rating of 7.878. The relationship between those two numbers summarises the whole chart: a title can dominate popularity while having been seen by a fraction of the audience that rated the older titles in the same table."
+      },
+      {
+        "position": 2,
+        "tmdbId": 1284041,
+        "type": "movie",
+        "title": "The Last House",
+        "channelTitle": "Film américain",
+        "posterPath": "/6JU7E8Vv2M11egkctWVOScxWR75.jpg",
+        "sectionTitleFr": "Troisième avec trois jours d'existence",
+        "sectionTitleEn": "Third Place, Three Days After Release",
+        "sectionTextFr": "Sorti le 6 août, ce film occupe la troisième place du classement des longs métrages avec 143,9 points de popularité et 140 votes seulement, pour une note de 6,239. C'est le cas le plus net de l'effet nouveauté : trois jours suffisent à devancer des titres vus par des dizaines de milliers de personnes. Sa note actuelle est la plus basse du top cinq, et elle repose sur un échantillon si mince qu'elle peut encore bouger d'un point entier.",
+        "sectionTextEn": "Released on 6 August, this film sits third among features with 143.9 popularity points and only 140 votes, for a rating of 6.239. It is the clearest case of the novelty effect: three days are enough to outrank titles watched by tens of thousands of people. Its current rating is the lowest in the top five, and it rests on a sample so thin that it can still move by a full point."
+      },
+      {
+        "position": 3,
+        "tmdbId": 1339713,
+        "type": "movie",
+        "title": "Obsession",
+        "channelTitle": "Film américain",
+        "posterPath": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+        "sectionTitleFr": "Le film de 2026 qui a eu le temps d'être vu",
+        "sectionTitleEn": "The 2026 Film That Had Time to Be Watched",
+        "sectionTextFr": "Sorti le 13 mai, Obsession est cinquième avec 314,1 points de popularité, mais surtout 4 420 votes et une note de 8,233, la meilleure du top cinq. Trois mois d'écart avec Spider-Man suffisent à multiplier par trois le nombre de votes. C'est le seul titre récent du classement dont la note peut être considérée comme stable, et il illustre le délai réel entre une sortie et un jugement fiable.",
+        "sectionTextEn": "Released on 13 May, Obsession is fifth with 314.1 popularity points, but above all 4,420 votes and a rating of 8.233, the best in the top five. Three months of separation from Spider-Man are enough to triple the vote count. It is the only recent title in the chart whose rating can be considered stable, and it illustrates the real delay between a release and a reliable verdict."
+      },
+      {
+        "position": 4,
+        "tmdbId": 66732,
+        "type": "tv",
+        "title": "Stranger Things",
+        "channelTitle": "Série américaine",
+        "posterPath": "/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+        "sectionTitleFr": "21 601 votes, et la vingt-sixième place",
+        "sectionTitleEn": "21,601 Votes, and Twenty-Sixth Place",
+        "sectionTextFr": "La série de 2016 détient le plus grand nombre de votes de tout le relevé, 21 601, pour une note de 8,556. Elle n'occupe pourtant que la vingt-sixième place des séries, avec 135,8 points de popularité, très loin derrière des titres sortis il y a quelques jours et notés par une dizaine de personnes. Aucune donnée ne résume mieux la différence entre être regardé et être d'actualité.",
+        "sectionTextEn": "The 2016 series holds the highest vote count in the entire snapshot, 21,601, for a rating of 8.556. Yet it sits only twenty-sixth among series, with 135.8 popularity points, far behind titles released days ago and rated by a dozen people. No other data point captures the difference between being watched and being current quite as well."
+      },
+      {
+        "position": 5,
+        "tmdbId": 615,
+        "type": "tv",
+        "title": "Futurama",
+        "channelTitle": "Série d'animation",
+        "posterPath": "/eM8bbTn8C8vUwwS6upzzm7gX31u.jpg",
+        "sectionTitleFr": "1999, et quatrième du classement des séries",
+        "sectionTitleEn": "1999, and Fourth Among Series",
+        "sectionTextFr": "L'exception qui confirme la règle : diffusée pour la première fois en mars 1999, la série est quatrième avec 115,3 points de popularité, 3 831 votes et une note de 8,363. Elle est le seul titre du XXe siècle dans le haut du tableau. Sa présence tient à une reprise récente et à un catalogue disponible partout, deux conditions qu'aucune des 131 nouveautés de 2026 n'aura à remplir avant plusieurs années.",
+        "sectionTextEn": "The exception that proves the rule: first broadcast in March 1999, the series ranks fourth with 115.3 popularity points, 3,831 votes and a rating of 8.363. It is the only twentieth-century title near the top of the table. Its presence rests on a recent revival and a catalogue available everywhere, two conditions none of the 131 titles from 2026 will have to meet for several years."
+      }
+    ]
+  },
+  {
+    "format": "FACE_TO_FACE",
+    "titleFr": "Spider-Man contre L'Odyssée : 1 550 points de popularité contre 887",
+    "titleEn": "Spider-Man vs The Odyssey: 1,550 Popularity Points Against 887",
+    "introFr": "Les deux premières places du classement des films, le 9 août 2026, sont occupées par deux blockbusters sortis à deux semaines d'intervalle. Spider-Man: Brand New Day mène avec 1 550,8 points de popularité, The Odyssey suit avec 886,9. L'écart paraît sans appel. Il le devient beaucoup moins quand on regarde les deux autres colonnes : le film le moins populaire est le mieux noté et compte presque deux fois plus de votes. Ce duel est un cas d'école pour comprendre ce que chaque chiffre mesure réellement.",
+    "introEn": "The top two places among films on 9 August 2026 are held by two blockbusters released two weeks apart. Spider-Man: Brand New Day leads with 1,550.8 popularity points, The Odyssey follows at 886.9. The gap looks decisive. It becomes far less so once you look at the other two columns: the less popular film is the better rated one, and it has nearly twice as many votes. This duel is a textbook case for understanding what each number actually measures.",
+    "conclusionFr": "Le verdict dépend entièrement de la question posée. Si la question est « de quoi parle-t-on cette semaine », Spider-Man gagne largement, et l'écart de 664 points de popularité mesure exactement la puissance d'une franchise installée depuis vingt ans. Si la question est « quel film a été vu et apprécié », c'est The Odyssey qui l'emporte, avec 2 427 votes contre 1 308 et une note supérieure malgré deux semaines d'avance seulement. Les deux films sortent de la même période estivale, visent le même public et disposent de moyens comparables. La seule différence structurelle tient à leur point de départ : l'un hérite d'un public qui n'a rien à découvrir, l'autre doit convaincre à partir d'un texte que tout le monde connaît de nom sans l'avoir lu. Dans quinze jours, la popularité de Spider-Man aura chuté de plusieurs centaines de points et la note de The Odyssey n'aura pas bougé d'un dixième. C'est la façon la plus simple de se rappeler laquelle de ces deux mesures vieillit bien.",
+    "conclusionEn": "The verdict depends entirely on the question. If the question is what people are talking about this week, Spider-Man wins comfortably, and the 664-point popularity gap measures precisely the power of a franchise established for twenty years. If the question is which film has been watched and appreciated, The Odyssey takes it, with 2,427 votes against 1,308 and a higher rating despite only two extra weeks in release. Both films come out of the same summer window, target the same audience and command comparable resources. The one structural difference is their starting point: one inherits an audience with nothing left to discover, the other has to convince people using a text everyone knows by name and almost nobody has read. In a fortnight, Spider-Man's popularity will have fallen by several hundred points and The Odyssey's rating will not have moved by a tenth. That is the simplest way to remember which of these two measurements ages well.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 969681,
+        "type": "movie",
+        "title": "Spider-Man: Brand New Day",
+        "channelTitle": "Film américain",
+        "posterPath": "/iPOn6DinuVyLY17YM9mKuPofV08.jpg",
+        "sectionTitleFr": "La franchise : 1 550,8 points, 1 308 votes",
+        "sectionTitleEn": "The Franchise: 1,550.8 Points, 1,308 Votes",
+        "sectionTextFr": "Sorti le 29 juillet 2026, le film écrase le classement de popularité avec 1 550,8 points, un score que personne d'autre n'approche dans le relevé, films et séries confondus. Sa note de 7,878 repose sur 1 308 votes, un total honorable pour onze jours d'exploitation mais très inférieur à celui de son poursuivant. C'est le profil classique d'une suite de franchise : l'attention est acquise avant la sortie, elle ne se gagne pas après. Le public arrive en masse parce qu'il connaît déjà le personnage, ce qui produit énormément de consultations et relativement peu de jugements écrits.",
+        "sectionTextEn": "Released on 29 July 2026, the film crushes the popularity ranking with 1,550.8 points, a score nobody else approaches in the snapshot, films and series combined. Its 7.878 rating rests on 1,308 votes, a respectable total for eleven days in release but well below its closest rival. That is the classic profile of a franchise sequel: attention is secured before release, not earned after it. Audiences arrive in bulk because they already know the character, which produces enormous traffic and relatively few written verdicts."
+      },
+      {
+        "position": 2,
+        "tmdbId": 1368337,
+        "type": "movie",
+        "title": "The Odyssey",
+        "channelTitle": "Film américain",
+        "posterPath": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+        "sectionTitleFr": "L'adaptation : 886,9 points, 2 427 votes",
+        "sectionTitleEn": "The Adaptation: 886.9 Points, 2,427 Votes",
+        "sectionTextFr": "Sorti le 15 juillet, soit quatorze jours avant son concurrent, le film totalise 886,9 points de popularité mais 2 427 votes et une note de 7,973, supérieure à celle de Spider-Man. Rapporté au temps d'exploitation, il génère donc davantage de retours par jour que le film qui le devance. Une adaptation littéraire sans personnage récurrent doit convaincre film par film, et le seul mécanisme dont elle dispose pour durer est le bouche-à-oreille. Le nombre de votes est précisément la trace de ce mécanisme.",
+        "sectionTextEn": "Released on 15 July, fourteen days ahead of its rival, the film totals 886.9 popularity points but 2,427 votes and a 7.973 rating, higher than Spider-Man's. Adjusted for time in release, it therefore generates more feedback per day than the film ahead of it. A literary adaptation with no recurring character has to convince audiences one film at a time, and word of mouth is the only mechanism it has to last. The vote count is precisely the trace that mechanism leaves behind."
+      }
+    ]
+  },
+  {
+    "format": "TOP_10",
+    "titleFr": "Top 10 des titres non anglophones du classement",
+    "titleEn": "Top 10 Non-English Titles in the Chart",
+    "introFr": "Sur les 200 titres suivis le 9 août 2026, l'anglais représente 134 entrées, soit 67 %. Le tiers restant se répartit entre le japonais (21 titres, 11 %), le coréen (15, 8 %), le chinois (11, 6 %) et le portugais (3, 2 %). Ce classement rassemble les dix titres non anglophones les mieux placés, dans l'ordre où ils apparaissent dans le relevé. Quatre langues, quatre logiques de production, et pas une seule qui ressemble aux autres.",
+    "introEn": "Of the 200 titles tracked on 9 August 2026, English accounts for 134 entries, or 67 %. The remaining third splits between Japanese (21 titles, 11 %), Korean (15, 8 %), Chinese (11, 6 %) and Portuguese (3, 2 %). This list gathers the ten highest-placed non-English titles, in the order they appear in the snapshot. Four languages, four production logics, and not one that resembles the others.",
+    "conclusionFr": "Ces dix titres décrivent quatre industries qui n'ont presque rien en commun. Le Japon fournit le catalogue : Bleach et One Piece sont diffusés depuis 2004 et 1999, et ils tiennent leur place grâce à un stock d'épisodes que personne ne rattrape jamais complètement. La Corée fournit le flux : Our Sticky Love date du 7 août, A Bona Fide Killer du 31 juillet, et le rythme de sortie est tel qu'un titre coréen entre presque chaque semaine dans le classement. La Chine fournit le volume sans la notoriété : Mystic Nine et Genius Girlfriend affichent quatre et un votes, ce qui signifie qu'elles circulent dans le classement avant d'avoir rencontré un public international. L'Amérique latine fournit l'exception patrimoniale, avec l'adaptation d'un roman de 1967 qui tient encore dix-huit mois après sa sortie. Un point mérite d'être retenu : la note moyenne des séries suivies est de 7,7, et sept des dix titres ci-dessus la dépassent. Le tiers non anglophone du classement n'est pas un supplément exotique, c'est la partie la mieux notée du tableau.",
+    "conclusionEn": "These ten titles describe four industries with almost nothing in common. Japan supplies the catalogue: Bleach and One Piece have been running since 2004 and 1999, and they hold their places thanks to an episode stock nobody ever fully catches up on. Korea supplies the flow: Our Sticky Love dates from 7 August, A Bona Fide Killer from 31 July, and the release rhythm is such that a Korean title enters the chart almost every week. China supplies volume without recognition: Mystic Nine and Genius Girlfriend show four votes and one vote respectively, meaning they circulate in the ranking before meeting any international audience. Latin America supplies the heritage exception, with an adaptation of a 1967 novel still holding on eighteen months after release. One point deserves to be kept: the average rating across tracked series is 7.7, and seven of the ten titles above beat it. The non-English third of this chart is not an exotic supplement. It is the best-rated part of the table.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 289324,
+        "type": "tv",
+        "title": "Star Wars: Visions Presents - The Ninth Jedi",
+        "channelTitle": "Anime japonais",
+        "posterPath": "/AthqHRKJFOIbLa459I3D5yHdrQL.jpg",
+        "sectionTitleFr": "1. Une franchise américaine produite en japonais",
+        "sectionTitleEn": "1. An American Franchise Produced in Japanese",
+        "sectionTextFr": "Sortie le 5 août 2026, cette série est la mieux placée du groupe avec 49,4 points de popularité et une note de 6,6 sur 11 votes. Son cas est particulier : la propriété intellectuelle est américaine, la langue originale est le japonais, et la production a été confiée à un studio d'animation local. C'est le seul titre du classement où une major externalise entièrement la fabrication à une industrie étrangère.",
+        "sectionTextEn": "Released on 5 August 2026, this series is the best placed of the group with 49.4 popularity points and a 6.6 rating from 11 votes. Its case is unusual: the intellectual property is American, the original language is Japanese, and production was handed to a local animation studio. It is the only title in the chart where a major outsources manufacturing entirely to a foreign industry."
+      },
+      {
+        "position": 2,
+        "tmdbId": 30984,
+        "type": "tv",
+        "title": "Bleach",
+        "channelTitle": "Anime japonais",
+        "posterPath": "/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg",
+        "sectionTitleFr": "2. Diffusée depuis 2004, 2 207 votes",
+        "sectionTitleEn": "2. On Air Since 2004, 2,207 Votes",
+        "sectionTextFr": "Avec 127,9 points de popularité, une note de 8,366 et 2 207 votes, la série dépasse en popularité la plupart des nouveautés occidentales du relevé. Sa première diffusion remonte à octobre 2004. Vingt-deux ans plus tard, elle occupe la huitième place du classement des séries, un résultat qu'aucune fiction en prises de vues réelles de la même époque n'obtient dans ce tableau.",
+        "sectionTextEn": "With 127.9 popularity points, a rating of 8.366 and 2,207 votes, the series outranks most of the Western newcomers in the snapshot. Its first broadcast dates back to October 2004. Twenty-two years later it holds eighth place among series, a result no live-action fiction of the same era achieves in this table."
+      },
+      {
+        "position": 3,
+        "tmdbId": 37854,
+        "type": "tv",
+        "title": "One Piece",
+        "channelTitle": "Anime japonais",
+        "posterPath": "/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg",
+        "sectionTitleFr": "3. La meilleure note du classement des séries",
+        "sectionTitleEn": "3. The Best Rating Among Series",
+        "sectionTextFr": "Note de 8,751 sur 5 468 votes, soit le meilleur score du classement des séries pour un échantillon supérieur à mille personnes. Diffusée depuis octobre 1999, elle est aussi le titre le plus ancien du groupe. Sa popularité, 50,9 points, est modeste : c'est la signature d'une série que l'on suit sans en parler, à l'inverse des nouveautés qui font l'inverse.",
+        "sectionTextEn": "A rating of 8.751 from 5,468 votes, the best score among series for any sample above one thousand people. On air since October 1999, it is also the oldest title in the group. Its popularity, 50.9 points, is modest: that is the signature of a series people follow without discussing it, the exact opposite of the newcomers around it."
+      },
+      {
+        "position": 4,
+        "tmdbId": 291496,
+        "type": "tv",
+        "title": "Our Sticky Love",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/tSZ4aFpTGc8Oj52SuzPUUZ7WKL0.jpg",
+        "sectionTitleFr": "4. Deux jours d'existence, dixième place",
+        "sectionTitleEn": "4. Two Days Old, Tenth Place",
+        "sectionTextFr": "Diffusée depuis le 7 août 2026, la série atteint 87,5 points de popularité avec seulement 7 votes et une note provisoire de 7,571. C'est le rythme coréen à l'état pur : une comédie dramatique entre au classement quarante-huit heures après son premier épisode, portée par un public international qui suit les annonces de diffusion plutôt que les critiques.",
+        "sectionTextEn": "On air since 7 August 2026, the series reaches 87.5 popularity points with only 7 votes and a provisional rating of 7.571. This is the Korean rhythm in its purest form: a romantic drama enters the chart forty-eight hours after its first episode, carried by an international audience that follows broadcast announcements rather than reviews."
+      },
+      {
+        "position": 5,
+        "tmdbId": 207333,
+        "type": "tv",
+        "title": "One Hundred Years of Solitude",
+        "channelTitle": "Série hispanophone",
+        "posterPath": "/9zrvktj9JYQwQxZD4lAySfcYlmI.jpg",
+        "sectionTitleFr": "5. Un roman de 1967, une série de 2024",
+        "sectionTitleEn": "5. A 1967 Novel, a 2024 Series",
+        "sectionTextFr": "Seule série en espagnol du haut de tableau, avec 69,1 points de popularité, une note de 7,9 et 225 votes. Diffusée depuis décembre 2024, elle tient sa place vingt mois après sa sortie, ce qu'aucune autre production non anglophone du classement ne parvient à faire. L'adaptation d'un texte devenu classique offre exactement ce qui manque aux nouveautés : une raison de la découvrir plusieurs années après.",
+        "sectionTextEn": "The only Spanish-language series near the top, with 69.1 popularity points, a 7.9 rating and 225 votes. On air since December 2024, it holds its place twenty months after release, something no other non-English production in the chart manages. Adapting a text that has become a classic provides exactly what newcomers lack: a reason to discover it several years later."
+      },
+      {
+        "position": 6,
+        "tmdbId": 271016,
+        "type": "tv",
+        "title": "Mystic Nine",
+        "channelTitle": "Série chinoise",
+        "posterPath": "/Q9u5ZSrthOuwkULV41VUqE8vRV.jpg",
+        "sectionTitleFr": "6. 43,3 points de popularité, 4 votes",
+        "sectionTitleEn": "6. 43.3 Popularity Points, 4 Votes",
+        "sectionTextFr": "Diffusée depuis le 30 juillet 2026, cette série chinoise obtient 43,3 points de popularité pour quatre votes seulement et une note de 6,2. L'écart entre les deux colonnes est le plus élevé du classement. Il décrit une industrie qui produit à un rythme industriel pour un marché intérieur immense, et dont les titres traversent les bases de données internationales bien avant de rencontrer un public hors de Chine.",
+        "sectionTextEn": "On air since 30 July 2026, this Chinese series records 43.3 popularity points for just four votes and a rating of 6.2. The gap between the two columns is the widest in the chart. It describes an industry producing at industrial pace for an enormous domestic market, whose titles cross international databases long before they meet any audience outside China."
+      },
+      {
+        "position": 7,
+        "tmdbId": 215072,
+        "type": "tv",
+        "title": "A Shop for Killers",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/7yUY1HUyQuybbvkAAhLzQ7x1l9g.jpg",
+        "sectionTitleFr": "7. Le catalogue coréen tient dans la durée",
+        "sectionTitleEn": "7. The Korean Catalogue Holds Over Time",
+        "sectionTextFr": "Sortie en janvier 2024, la série reste au classement avec 82,1 points de popularité, 204 votes et une note de 8,431, la deuxième meilleure de cette sélection. Elle prouve que la production coréenne ne se limite pas à un flux de nouveautés : quand un titre trouve son public, il reste disponible et continue d'être découvert deux ans plus tard.",
+        "sectionTextEn": "Released in January 2024, the series remains in the chart with 82.1 popularity points, 204 votes and a rating of 8.431, the second best in this selection. It proves Korean production is not limited to a stream of newcomers: when a title finds its audience, it stays available and keeps being discovered two years later."
+      },
+      {
+        "position": 8,
+        "tmdbId": 220074,
+        "type": "tv",
+        "title": "Flex X Cop",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/2eWH2RDxpbIfEs17BpJTQhcOqRs.jpg",
+        "sectionTitleFr": "8. 43 votes, une note de 7,8",
+        "sectionTitleEn": "8. 43 Votes, a Rating of 7.8",
+        "sectionTextFr": "Diffusée depuis janvier 2024, cette comédie policière obtient 26 points de popularité et une note de 7,8 sur 43 votes. C'est le titre le moins populaire de la sélection, et sa présence dit quelque chose d'utile : le classement suit deux cents titres, ce qui laisse assez de place pour que des séries de niche restent visibles au lieu d'être écrasées par les vingt premières.",
+        "sectionTextEn": "On air since January 2024, this police comedy records 26 popularity points and a 7.8 rating from 43 votes. It is the least popular title in this selection, and its presence says something useful: the chart tracks two hundred titles, which leaves enough room for niche series to stay visible instead of being crushed by the top twenty."
+      },
+      {
+        "position": 9,
+        "tmdbId": 289116,
+        "type": "tv",
+        "title": "Genius Girlfriend",
+        "channelTitle": "Série chinoise",
+        "posterPath": "/hhLJ33MIiQKuvdJ6FNcZZQIBng4.jpg",
+        "sectionTitleFr": "9. Une note de 9 sur un seul vote",
+        "sectionTitleEn": "9. A Rating of 9 From a Single Vote",
+        "sectionTextFr": "Diffusée depuis le 2 août 2026, la série affiche 52,6 points de popularité et une note de 9 établie sur un unique vote. C'est le meilleur rappel possible qu'une note doit toujours être lue avec son effectif : celle-ci est mathématiquement la plus élevée du classement des séries, et elle ne signifie strictement rien.",
+        "sectionTextEn": "On air since 2 August 2026, the series shows 52.6 popularity points and a rating of 9 established from a single vote. It is the best possible reminder that a rating must always be read alongside its sample: this one is mathematically the highest among series in the chart, and it means absolutely nothing."
+      },
+      {
+        "position": 10,
+        "tmdbId": 94664,
+        "type": "tv",
+        "title": "Mushoku Tensei: Jobless Reincarnation",
+        "channelTitle": "Anime japonais",
+        "posterPath": "/gLKOYIMyKlUHW0SVdskhgf9C0yy.jpg",
+        "sectionTitleFr": "10. 146,1 points, la plus forte popularité du groupe",
+        "sectionTitleEn": "10. 146.1 Points, the Highest Popularity of the Group",
+        "sectionTextFr": "Diffusée depuis janvier 2021, la série obtient 146,1 points de popularité, le meilleur score de cette sélection, avec 1 635 votes et une note de 8,469. Cinq ans après son premier épisode, elle dépasse en popularité neuf des dix titres ci-dessus, dont plusieurs sortis la semaine dernière. L'animation japonaise est la seule industrie du classement capable de ce genre de longévité.",
+        "sectionTextEn": "On air since January 2021, the series records 146.1 popularity points, the best score in this selection, with 1,635 votes and a rating of 8.469. Five years after its first episode, it outranks nine of the ten titles above on popularity, several of which came out last week. Japanese animation is the only industry in this chart capable of that kind of longevity."
+      }
+    ]
+  },
+  {
+    "format": "GUIDE",
+    "titleFr": "Cinq séries à commencer cette semaine, classées par temps à y consacrer",
+    "titleEn": "Five Series to Start This Week, Ranked by the Time They Ask For",
+    "introFr": "Choisir une série dans un classement de popularité pose un problème que les notes ne résolvent pas : rien n'indique dans quoi on s'engage. Une nouveauté de huit épisodes et une série diffusée depuis 1999 apparaissent côte à côte avec des chiffres comparables. Ce guide reprend cinq titres du relevé du 9 août 2026 et les classe selon le seul critère qui manque au tableau, la durée d'engagement, de la soirée unique au projet de plusieurs années.",
+    "introEn": "Picking a series from a popularity chart raises a problem ratings do not solve: nothing tells you what you are committing to. An eight-episode newcomer and a series running since 1999 appear side by side with comparable numbers. This guide takes five titles from the 9 August 2026 snapshot and ranks them by the one criterion the table lacks, the length of the commitment, from a single evening to a multi-year project.",
+    "conclusionFr": "Trois réflexes suffisent à utiliser un classement de popularité sans se tromper d'engagement. D'abord, regarder la date de première diffusion avant la note : elle indique immédiatement si l'on a affaire à une saison ou à un catalogue. Ensuite, croiser le nombre de votes avec cette date. Une série de 2026 avec 13 votes et une série de 1999 avec 5 468 votes peuvent afficher la même popularité, mais la première est un pari et la seconde une valeur sûre dont il reste à évaluer le coût en heures. Enfin, accepter que la popularité récompense mécaniquement ce qui vient de sortir : sur les 200 titres du relevé, 131 datent de 2026, ce qui signifie que le tableau pousse en permanence vers le neuf. Les cinq titres ci-dessus couvrent volontairement tout le spectre, de deux jours d'existence à vingt-sept ans de diffusion. Le bon choix ne dépend pas de leur classement respectif, il dépend du temps dont on dispose réellement, et c'est la seule information qu'aucune plateforme n'affiche jamais.",
+    "conclusionEn": "Three habits are enough to use a popularity chart without misjudging the commitment. First, look at the first broadcast date before the rating: it immediately tells you whether you are facing a season or a catalogue. Second, cross that date with the vote count. A 2026 series with 13 votes and a 1999 series with 5,468 votes can show similar popularity, but the first is a bet and the second a known quantity whose cost in hours remains to be measured. Third, accept that popularity mechanically rewards whatever just came out: of the 200 titles in the snapshot, 131 are from 2026, which means the table constantly pushes towards the new. The five titles above deliberately cover the whole spectrum, from two days old to twenty-seven years on air. The right choice does not depend on their respective rankings. It depends on the time you actually have, and that is the one piece of information no platform ever displays.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 291496,
+        "type": "tv",
+        "title": "Our Sticky Love",
+        "channelTitle": "Série coréenne",
+        "posterPath": "/tSZ4aFpTGc8Oj52SuzPUUZ7WKL0.jpg",
+        "sectionTitleFr": "Une soirée : la nouveauté de la semaine",
+        "sectionTitleEn": "One Evening: This Week's Newcomer",
+        "sectionTextFr": "Diffusée depuis le 7 août 2026, la série vient de commencer : rien à rattraper, aucun contexte à connaître. Elle affiche 87,5 points de popularité et une note provisoire de 7,571 établie sur 7 votes, autant dire rien. C'est exactement le profil à choisir quand on veut suivre quelque chose en direct plutôt que consommer un catalogue, en acceptant le risque d'abandonner au troisième épisode.",
+        "sectionTextEn": "On air since 7 August 2026, the series has just begun: nothing to catch up on, no context required. It shows 87.5 popularity points and a provisional 7.571 rating from 7 votes, which is to say almost nothing. This is precisely the profile to pick when you want to follow something as it airs rather than consume a catalogue, accepting the risk of dropping it by episode three."
+      },
+      {
+        "position": 2,
+        "tmdbId": 298168,
+        "type": "tv",
+        "title": "The Shards",
+        "channelTitle": "Série américaine",
+        "posterPath": "/wP0GdqwVu2g1y3q1KzBXuSrdTvX.jpg",
+        "sectionTitleFr": "Une semaine : la meilleure note des nouveautés",
+        "sectionTitleEn": "One Week: The Best-Rated Newcomer",
+        "sectionTextFr": "Diffusée depuis le 5 août 2026, elle est septième du classement des séries avec 89,8 points de popularité et une note de 8,077 sur 13 votes. Parmi les titres entrés cette semaine, c'est celui dont les premiers retours sont les meilleurs. Treize votes ne prouvent rien, mais dans un tableau où les nouveautés tournent autour de 6,5, un 8 initial mérite qu'on lui accorde une semaine.",
+        "sectionTextEn": "On air since 5 August 2026, it ranks seventh among series with 89.8 popularity points and a rating of 8.077 from 13 votes. Among the titles that entered this week, it has the strongest early feedback. Thirteen votes prove nothing, but in a table where newcomers hover around 6.5, an opening 8 is worth a week of your time."
+      },
+      {
+        "position": 3,
+        "tmdbId": 125988,
+        "type": "tv",
+        "title": "Silo",
+        "channelTitle": "Apple TV+",
+        "posterPath": "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg",
+        "sectionTitleFr": "Un mois : la première place du classement",
+        "sectionTitleEn": "One Month: The Number One",
+        "sectionTextFr": "Première du classement des séries avec 238,3 points de popularité, une note de 8,2 et 2 388 votes, la série est diffusée depuis mai 2023. L'engagement se compte en dizaines d'épisodes, pas en centaines, et l'échantillon de votes est assez large pour que la note soit fiable. C'est le meilleur compromis du tableau entre certitude et durée : on sait ce qu'on prend, et cela tient dans un mois.",
+        "sectionTextEn": "First among series with 238.3 popularity points, a rating of 8.2 and 2,388 votes, it has been on air since May 2023. The commitment runs to dozens of episodes, not hundreds, and the vote sample is broad enough for the rating to be reliable. This is the best trade-off in the table between certainty and duration: you know what you are getting, and it fits inside a month."
+      },
+      {
+        "position": 4,
+        "tmdbId": 94997,
+        "type": "tv",
+        "title": "House of the Dragon",
+        "channelTitle": "Série américaine",
+        "posterPath": "/7V0Ebks0GgpKvQ7QbLAIdX5dos4.jpg",
+        "sectionTitleFr": "Une saison entière : 6 868 votes",
+        "sectionTitleEn": "A Full Season: 6,868 Votes",
+        "sectionTextFr": "Deuxième du classement avec 354,2 points de popularité, la série obtient 8,382 sur 6 868 votes, le deuxième plus gros échantillon du relevé après Stranger Things. Diffusée depuis août 2022, elle demande un vrai investissement : épisodes longs, distribution nombreuse, intrigue qui suppose de l'attention. En échange, aucune autre série du tableau n'offre une note aussi solide sur autant de votes.",
+        "sectionTextEn": "Second in the chart with 354.2 popularity points, the series records 8.382 from 6,868 votes, the second largest sample in the snapshot after Stranger Things. On air since August 2022, it demands genuine investment: long episodes, a large cast, a plot that assumes attention. In exchange, no other series in the table offers a rating this solid on this many votes."
+      },
+      {
+        "position": 5,
+        "tmdbId": 37854,
+        "type": "tv",
+        "title": "One Piece",
+        "channelTitle": "Anime japonais",
+        "posterPath": "/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg",
+        "sectionTitleFr": "Plusieurs années : la meilleure note du relevé",
+        "sectionTitleEn": "Several Years: The Best Rating in the Snapshot",
+        "sectionTextFr": "Diffusée depuis octobre 1999, la série détient la meilleure note du classement des séries au-delà de mille votes : 8,751 sur 5 468. Sa popularité, 50,9 points, est vingt fois inférieure à celle de la première place, ce qui est logique : on ne commence pas ce genre de titre sur un coup de tête. C'est le seul de cette liste qui se planifie plutôt qu'il ne se choisit.",
+        "sectionTextEn": "On air since October 1999, the series holds the best rating among series above one thousand votes: 8.751 from 5,468. Its popularity, 50.9 points, is twenty times below the number one, which makes sense: nobody starts a title like this on impulse. It is the only entry on this list you plan rather than pick."
+      }
+    ]
+  },
+  {
+    "format": "PORTRAIT",
+    "titleFr": "Apple TV+ place trois séries au classement, dont la première",
+    "titleEn": "Apple TV+ Places Three Series in the Chart, Including the Number One",
+    "introFr": "Le catalogue d'Apple TV+ est le plus petit des grands services de diffusion, de très loin. Il compte quelques dizaines de séries originales, là où ses concurrents en alignent plusieurs centaines. Le 9 août 2026, il place pourtant trois titres dans notre classement de 100 séries, dont celui qui occupe la première place. Rapporté à la taille du catalogue, c'est le meilleur taux de présence de tout le relevé, et il s'explique par une stratégie facile à décrire et très difficile à copier.",
+    "introEn": "The Apple TV+ catalogue is the smallest among the major streaming services, by a wide margin. It holds a few dozen original series where its competitors line up several hundred. On 9 August 2026 it nonetheless places three titles in our chart of 100 series, including the one at number one. Relative to catalogue size, that is the best presence rate in the entire snapshot, and it comes from a strategy that is easy to describe and very hard to copy.",
+    "conclusionFr": "Le point commun des trois titres n'est ni le genre, ni le budget, ni la vedette. C'est le nombre d'épisodes. Aucune des trois séries ne dépasse la dizaine d'épisodes par saison, aucune n'a été prolongée jusqu'à l'épuisement, et les trois affichent des notes comprises entre 7,2 et 8,344 sur des échantillons de 347 à 2 506 votes. Là où le modèle dominant consiste à produire beaucoup pour occuper un maximum de place dans les recommandations, celui-ci consiste à produire peu et à laisser chaque titre vivre longtemps. Silo est diffusée depuis 2023 et reste première du classement trois ans plus tard. Ted Lasso a commencé en 2020 et se maintient troisième. Sugar, sortie en 2024, tient encore la quinzième place avec 347 votes. La contrepartie est visible dans les chiffres : avec trois titres seulement, le service ne peut pas encaisser un échec, et il n'a aucune profondeur de catalogue pour retenir un abonné entre deux sorties. Cette stratégie produit le meilleur taux de réussite du classement et le service le plus fragile.",
+    "conclusionEn": "What the three titles share is neither genre, nor budget, nor star power. It is episode count. None of the three exceeds roughly ten episodes per season, none has been extended to exhaustion, and all three post ratings between 7.2 and 8.344 on samples of 347 to 2,506 votes. Where the dominant model consists of producing a lot in order to occupy as much recommendation space as possible, this one consists of producing little and letting each title live a long time. Silo has been on air since 2023 and is still number one three years later. Ted Lasso started in 2020 and holds third. Sugar, released in 2024, still occupies fifteenth place with 347 votes. The trade-off is visible in the same numbers: with only three titles, the service cannot absorb a failure, and it has no catalogue depth to retain a subscriber between releases. This strategy produces the best hit rate in the chart and the most fragile service in it.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 125988,
+        "type": "tv",
+        "title": "Silo",
+        "channelTitle": "Apple TV+",
+        "posterPath": "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg",
+        "sectionTitleFr": "Première du classement, trois ans après sa sortie",
+        "sectionTitleEn": "Number One, Three Years After Release",
+        "sectionTextFr": "238,3 points de popularité, une note de 8,2 sur 2 388 votes, et une première diffusion qui remonte à mai 2023. Aucune autre série du classement ne combine une telle ancienneté avec la première place. La série est une adaptation de romans de science-fiction, un genre où le respect du matériau d'origine détermine largement la fidélité du public, et les 2 388 votes indiquent que ce public est resté.",
+        "sectionTextEn": "238.3 popularity points, a rating of 8.2 from 2,388 votes, and a first broadcast dating back to May 2023. No other series in the chart combines that age with first place. It is an adaptation of science-fiction novels, a genre where faithfulness to the source largely determines audience loyalty, and the 2,388 votes indicate that audience stayed."
+      },
+      {
+        "position": 2,
+        "tmdbId": 97546,
+        "type": "tv",
+        "title": "Ted Lasso",
+        "channelTitle": "Apple TV+",
+        "posterPath": "/uRHsiw1wLxPHFXkkv4Ix1s0O6f4.jpg",
+        "sectionTitleFr": "Troisième, six ans après le premier épisode",
+        "sectionTitleEn": "Third, Six Years After the First Episode",
+        "sectionTextFr": "140,3 points de popularité, une note de 8,344 sur 2 506 votes, pour une série lancée en août 2020. C'est le titre le plus ancien du trio et celui qui compte le plus de votes. Une comédie dramatique sur un entraîneur de football est le contraire d'un concept vendeur à l'international, et sa présence à la troisième place six ans plus tard mesure exactement ce que vaut le bouche-à-oreille quand un service ne mise pas sur le volume.",
+        "sectionTextEn": "140.3 popularity points, a rating of 8.344 from 2,506 votes, for a series launched in August 2020. It is the oldest of the trio and the one with the most votes. A comedy drama about a football coach is the opposite of an internationally marketable concept, and its presence in third place six years later measures precisely what word of mouth is worth when a service does not bet on volume."
+      },
+      {
+        "position": 3,
+        "tmdbId": 203744,
+        "type": "tv",
+        "title": "Sugar",
+        "channelTitle": "Apple TV+",
+        "posterPath": "/tLmwLYiI7EpPbhgmdeivNGY0xw7.jpg",
+        "sectionTitleFr": "Quinzième, avec la note la plus basse des trois",
+        "sectionTitleEn": "Fifteenth, With the Lowest Rating of the Three",
+        "sectionTextFr": "81,1 points de popularité, une note de 7,2 sur 347 votes, pour une série diffusée depuis avril 2024. C'est le maillon faible du trio, et il se situe juste sous la moyenne des séries suivies, qui s'établit à 7,7 pour l'ensemble du classement. Sa présence deux ans après sa sortie, avec un échantillon de votes dix fois inférieur aux deux autres, montre que le service parvient à faire durer même ses titres les moins consensuels.",
+        "sectionTextEn": "81.1 popularity points, a rating of 7.2 from 347 votes, for a series on air since April 2024. It is the weakest link of the trio, and it sits just below the 7.7 average rating across all tracked series. Its presence two years after release, with a vote sample ten times smaller than the other two, shows the service manages to sustain even its least consensual titles."
+      }
+    ]
+  },
+  {
+    "format": "RETROSPECTIVE",
+    "titleFr": "Deux Odyssée dans le même classement, près de trois mille ans après le poème",
+    "titleEn": "Two Films Called The Odyssey in the Same Chart, Nearly Three Thousand Years On",
+    "introFr": "Le relevé du 9 août 2026 contient deux films différents intitulés The Odyssey, sortis à douze jours d'intervalle et présents simultanément dans le classement. Le premier est deuxième avec 886,9 points de popularité, le second trente-huitième avec 202,5. Ils n'ont ni le même producteur, ni le même budget, ni le même public, et ils adaptent le même texte, composé autour du VIIIe siècle avant notre ère. Le classement offre rarement une expérience aussi propre : deux traitements du même récit, mesurés le même jour, avec les mêmes instruments.",
+    "introEn": "The 9 August 2026 snapshot contains two different films titled The Odyssey, released twelve days apart and present in the chart at the same time. The first ranks second with 886.9 popularity points, the second thirty-eighth with 202.5. They share neither producer, nor budget, nor audience, and they adapt the same text, composed around the eighth century BC. The chart rarely offers an experiment this clean: two treatments of one story, measured on the same day, with the same instruments.",
+    "conclusionFr": "Ce qui rend ce doublon intéressant dépasse la coïncidence de calendrier. Un texte tombé dans le domaine public depuis des siècles n'appartient à personne, ce qui autorise deux productions concurrentes à sortir la même année sans qu'aucune ne puisse bloquer l'autre. C'est exactement l'inverse du mécanisme qui gouverne le reste du classement, où chaque titre est protégé et où deux versions simultanées d'une même histoire sont juridiquement impossibles. Le résultat se lit dans les chiffres : 2 427 votes contre 9, une note de 7,973 contre 6,2, un rapport de popularité de quatre contre un. Le public a tranché très vite, et il a tranché en faveur des moyens. La troisième entrée de cette rétrospective complète le tableau : un roman de 1967 adapté en 2024 tient encore vingt mois plus tard, mieux que la plupart des nouveautés de 2026. Les textes anciens ont un avantage que les scénarios originaux n'auront jamais. Ils arrivent avec un public qui connaît déjà l'histoire, et il ne reste plus qu'à savoir si on la raconte bien.",
+    "conclusionEn": "What makes this duplicate interesting goes beyond a calendar coincidence. A text in the public domain for centuries belongs to nobody, which allows two competing productions to release in the same year with neither able to block the other. That is the exact opposite of the mechanism governing the rest of the chart, where every title is protected and two simultaneous versions of one story are legally impossible. The result reads in the numbers: 2,427 votes against 9, a rating of 7.973 against 6.2, a popularity ratio of four to one. The audience decided very quickly, and it decided in favour of resources. The third entry in this retrospective completes the picture: a 1967 novel adapted in 2024 still holds twenty months later, better than most 2026 newcomers. Old texts have an advantage original screenplays will never have. They arrive with an audience that already knows the story, and the only remaining question is whether you tell it well.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 1368337,
+        "type": "movie",
+        "title": "The Odyssey",
+        "channelTitle": "Film américain",
+        "posterPath": "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+        "sectionTitleFr": "La version majeure : 2 427 votes",
+        "sectionTitleEn": "The Major Version: 2,427 Votes",
+        "sectionTextFr": "Sortie le 15 juillet 2026, cette adaptation occupe la deuxième place du classement des films avec 886,9 points de popularité, une note de 7,973 et 2 427 votes. C'est presque le double du total de Spider-Man, qui la dépasse pourtant largement en popularité. Autrement dit, parmi les films sortis cet été, c'est celui qui a réellement été vu par le plus de monde.",
+        "sectionTextEn": "Released on 15 July 2026, this adaptation holds second place among films with 886.9 popularity points, a rating of 7.973 and 2,427 votes. That is close to double Spider-Man's total, even though Spider-Man beats it comfortably on popularity. In other words, among the films released this summer, it is the one that has genuinely been watched by the most people."
+      },
+      {
+        "position": 2,
+        "tmdbId": 1698863,
+        "type": "movie",
+        "title": "The Odyssey",
+        "channelTitle": "Film américain",
+        "posterPath": "/xBHCRB7zLIW41w8QskfwJhm32YF.jpg",
+        "sectionTitleFr": "L'autre version : 9 votes",
+        "sectionTitleEn": "The Other Version: 9 Votes",
+        "sectionTextFr": "Sortie le 3 juillet 2026, douze jours avant l'autre, cette adaptation obtient 202,5 points de popularité, une note de 6,2 et neuf votes. Neuf. Elle est trente-huitième du classement, ce qui reste une place honorable pour un film que presque personne n'a vu, et cette place tient très probablement à l'homonymie : une partie de son trafic vient de spectateurs qui cherchaient l'autre film.",
+        "sectionTextEn": "Released on 3 July 2026, twelve days before the other, this adaptation records 202.5 popularity points, a rating of 6.2 and nine votes. Nine. It ranks thirty-eighth, which remains a respectable position for a film almost nobody has seen, and that position very probably owes something to the shared title: part of its traffic comes from viewers looking for the other one."
+      },
+      {
+        "position": 3,
+        "tmdbId": 207333,
+        "type": "tv",
+        "title": "One Hundred Years of Solitude",
+        "channelTitle": "Série hispanophone",
+        "posterPath": "/9zrvktj9JYQwQxZD4lAySfcYlmI.jpg",
+        "sectionTitleFr": "Un roman de 1967, toujours au classement en 2026",
+        "sectionTitleEn": "A 1967 Novel, Still Charting in 2026",
+        "sectionTextFr": "Diffusée depuis décembre 2024, l'adaptation obtient 69,1 points de popularité, une note de 7,9 et 225 votes. Elle est la seule série hispanophone du haut de tableau et la seule adaptation littéraire du relevé à tenir plus de dix-huit mois. Comparée aux deux Odyssée, elle montre l'autre versant du même principe : un texte connu n'a pas besoin d'être ancien de trois mille ans pour porter une production, il lui suffit d'être devenu un classique.",
+        "sectionTextEn": "On air since December 2024, the adaptation records 69.1 popularity points, a rating of 7.9 and 225 votes. It is the only Spanish-language series near the top of the table and the only literary adaptation in the snapshot to hold for more than eighteen months. Compared with the two Odyssey films, it shows the other side of the same principle: a known text does not need to be three thousand years old to carry a production, it only needs to have become a classic."
+      }
+    ]
+  },
+  {
+    "format": "SUGGESTION",
+    "titleFr": "The Shards, la série à commencer cette semaine",
+    "titleEn": "The Shards Is This Week's Series to Start",
+    "introFr": "Trente-quatre titres sont entrés dans le classement cette semaine. La plupart repartiront aussi vite qu'ils sont arrivés, parce qu'une place obtenue le jour de la diffusion ne prouve rien. Un seul de ces trente-quatre titres présente une combinaison qui mérite qu'on s'y arrête : une septième place au classement des séries et une note d'ouverture de 8,077, sensiblement au-dessus de ce que les nouveautés obtiennent d'ordinaire. C'est The Shards, diffusée depuis le 5 août 2026.",
+    "introEn": "Thirty-four titles entered the chart this week. Most will leave as fast as they arrived, because a place won on broadcast day proves nothing. Only one of those thirty-four shows a combination worth stopping for: seventh place among series and an opening rating of 8.077, appreciably above what newcomers usually manage. That title is The Shards, on air since 5 August 2026.",
+    "conclusionFr": "Il faut être honnête sur ce que valent ces chiffres. Treize votes constituent un échantillon dérisoire, et la note baissera presque certainement quand elle en comptera mille. C'est ce qui arrive à toutes les séries de ce classement : la moyenne des séries suivies s'établit à 7,7, et les notes d'ouverture au-dessus de 8 y reviennent presque toujours. L'intérêt n'est donc pas dans la valeur absolue mais dans la comparaison. Sur les trente-quatre entrées de la semaine, la plupart ouvrent entre 6 et 7, plusieurs séries chinoises et coréennes affichent moins de cinq votes, et une série entrée le 7 août tient une note de 3 sur un vote unique. Dans ce contexte, 8,077 sur treize votes est le meilleur signal disponible, et il arrive avec une popularité de 89,8 points qui place la série devant des titres beaucoup plus promus. Le calcul à faire est simple : une nouveauté se juge après trois épisodes, et cette semaine, c'est celle qui a le plus de chances de tenir la distance. Si elle ne tient pas, le classement du 16 août le dira sans ménagement.",
+    "conclusionEn": "It is worth being honest about what these numbers are worth. Thirteen votes is a derisory sample, and the rating will almost certainly fall once it reaches a thousand. That happens to every series in this chart: the average across tracked series stands at 7.7, and opening ratings above 8 nearly always return to it. The interest therefore lies not in the absolute value but in the comparison. Of the thirty-four entries this week, most open between 6 and 7, several Chinese and Korean series show fewer than five votes, and one series that entered on 7 August holds a rating of 3 from a single vote. In that context, 8.077 from thirteen votes is the best signal available, and it arrives with 89.8 popularity points, placing the series ahead of far more heavily promoted titles. The calculation is simple: a newcomer is judged after three episodes, and this week this is the one most likely to hold up. If it does not, the 16 August chart will say so without mercy.",
+    "items": [
+      {
+        "position": 1,
+        "tmdbId": 298168,
+        "type": "tv",
+        "title": "The Shards",
+        "channelTitle": "Série américaine",
+        "posterPath": "/wP0GdqwVu2g1y3q1KzBXuSrdTvX.jpg",
+        "sectionTitleFr": "Septième au classement avec quatre jours d'existence",
+        "sectionTitleEn": "Seventh Place, Four Days After Launch",
+        "sectionTextFr": "Diffusée depuis le 5 août 2026, la série atteint 89,8 points de popularité et se classe septième parmi les cent séries suivies, devant des titres installés depuis des années comme Rick and Morty ou Stranger Things. Sa note de 8,077 sur 13 votes la place au-dessus de la moyenne du classement, fixée à 7,7, ce qu'aucune autre entrée de la semaine ne réussit. Le genre annoncé, un mélange de drame et de mystère, correspond à la catégorie la plus représentée du classement des séries, puisque le drame concerne 55 % des titres suivis et le mystère 23 %. Autrement dit, la série arrive sur un terrain saturé et s'y installe quand même en deuxième position parmi les séries entrées au classement depuis le 1er août.",
+        "sectionTextEn": "On air since 5 August 2026, the series reaches 89.8 popularity points and ranks seventh among the hundred series tracked, ahead of long-established titles such as Rick and Morty and Stranger Things. Its 8.077 rating from 13 votes places it above the chart average of 7.7, which no other entry this week manages. Its announced genre, a mix of drama and mystery, matches the most represented category in the series ranking, since drama covers 55 % of tracked titles and mystery 23 %. In other words, the series arrives on saturated ground and still settles into second place among the series that entered the chart since 1 August."
+      }
+    ]
+  }
+]
