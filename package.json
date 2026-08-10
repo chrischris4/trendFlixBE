@@ -4,7 +4,7 @@
   "scripts": {
     "build": "nest build",
     "start:dev": "nest start --watch",
-    "start:prod": "prisma db push && node dist/main"
+    "start:prod": "prisma db push --accept-data-loss && node dist/main"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
