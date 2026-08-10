@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { BlogArticleFormat } from '@prisma/client';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { PrismaService } from '../prisma/prisma.service';
@@ -11,9 +11,7 @@ export interface CreateBlogArticleItemDto {
   channelTitle?: string;
   posterPath?: string;
   countryCount?: number;
-  sectionTitleFr?: string;
   sectionTitleEn?: string;
-  sectionTextFr?: string;
   sectionTextEn?: string;
 }
 
@@ -22,24 +20,21 @@ export interface CreateBlogArticleDto {
   tmdbId?: number;
   type?: string;
   title?: string;
-  titleFr?: string;
   titleEn?: string;
   channelTitle?: string;
   posterPath?: string;
   viewCount?: number;
   countryCount?: number;
   weekOf?: string;
-  editorialFr?: string;
   editorialEn?: string;
-  introFr?: string;
   introEn?: string;
-  conclusionFr?: string;
   conclusionEn?: string;
   items?: CreateBlogArticleItemDto[];
   published?: boolean;
 }
 
-type ArticleLanguage = 'Fr' | 'En';
+/** Longueur de l'extrait servi dans la liste, coupe sur un mot entier. */
+const EXCERPT_LENGTH = 260;
 
 @Injectable()
 export class BlogService {
@@ -61,15 +56,62 @@ export class BlogService {
           channelTitle: a.channelTitle,
           posterPath: a.posterPath,
           countryCount: a.countryCount,
-          sectionTitleFr: null,
           sectionTitleEn: null,
-          sectionTextFr: null,
           sectionTextEn: null,
         }];
     return {
       ...a,
       viewCount: a.viewCount !== null ? Number(a.viewCount) : null,
       items,
+    };
+  }
+
+  private wordCount(text?: string | null): number {
+    return (text ?? '').trim().split(/\s+/).filter(Boolean).length;
+  }
+
+  /**
+   * Nombre de mots reellement rendus sur la page article. Calcule ici pour que
+   * la liste puisse s'en servir (seuil d'indexation, sitemap) sans transporter
+   * le texte integral de chaque article.
+   */
+  private articleWordCount(a: any): number {
+    const structured = [a.introEn, a.conclusionEn, ...(a.items ?? []).flatMap((i: any) => [i.sectionTitleEn, i.sectionTextEn])]
+      .reduce((total: number, part: any) => total + this.wordCount(part), 0);
+    return Math.max(structured, this.wordCount(a.editorialEn));
+  }
+
+  private excerpt(a: any): string {
+    const source = (a.introEn || a.editorialEn || '').trim();
+    if (source.length <= EXCERPT_LENGTH) return source;
+    const cut = source.slice(0, EXCERPT_LENGTH);
+    return cut.slice(0, cut.lastIndexOf(' ')).trimEnd() + '…';
+  }
+
+  /**
+   * Projection de liste : ni texte integral, ni tableau d'elements. Ce endpoint
+   * est appele sur l'accueil, la page blog, chaque article et le sitemap, donc
+   * il ne doit transporter que ce qu'une carte affiche.
+   */
+  private toListItem(a: any) {
+    const primary = a.items?.[0];
+    return {
+      id: a.id,
+      format: a.format,
+      title: a.title,
+      titleEn: a.titleEn,
+      tmdbId: primary?.tmdbId ?? a.tmdbId,
+      type: primary?.type ?? a.type,
+      channelTitle: primary?.channelTitle ?? a.channelTitle,
+      posterPath: primary?.posterPath ?? a.posterPath,
+      viewCount: a.viewCount !== null ? Number(a.viewCount) : null,
+      countryCount: primary?.countryCount ?? a.countryCount ?? null,
+      weekOf: a.weekOf,
+      createdAt: a.createdAt,
+      published: a.published,
+      excerpt: this.excerpt(a),
+      wordCount: this.articleWordCount(a),
+      itemCount: a.items?.length ?? 1,
     };
   }
 
@@ -100,7 +142,7 @@ export class BlogService {
   }
 
   private legacyItem(dto: CreateBlogArticleDto): CreateBlogArticleItemDto | null {
-    const title = dto.title ?? dto.titleFr ?? dto.titleEn;
+    const title = dto.title ?? dto.titleEn;
     if (!title) return null;
     return {
       position: 1,
@@ -113,16 +155,12 @@ export class BlogService {
     };
   }
 
-  private buildEditorial(dto: CreateBlogArticleDto, language: ArticleLanguage): string {
-    const explicit = dto[`editorial${language}`];
-    if (explicit?.trim()) return explicit.trim();
-
-    const parts = [
-      dto[`intro${language}`],
-      ...(dto.items ?? []).map(item => item[`sectionText${language}`]),
-      dto[`conclusion${language}`],
-    ];
-    return parts.filter((part): part is string => Boolean(part?.trim())).join('\n\n').trim();
+  private buildEditorial(dto: CreateBlogArticleDto): string {
+    if (dto.editorialEn?.trim()) return dto.editorialEn.trim();
+    return [dto.introEn, ...(dto.items ?? []).map(item => item.sectionTextEn), dto.conclusionEn]
+      .filter((part): part is string => Boolean(part?.trim()))
+      .join('\n\n')
+      .trim();
   }
 
   private itemCreateData(item: CreateBlogArticleItemDto) {
@@ -134,9 +172,7 @@ export class BlogService {
       channelTitle: item.channelTitle ?? null,
       posterPath: item.posterPath ?? null,
       countryCount: item.countryCount ?? null,
-      sectionTitleFr: item.sectionTitleFr ?? null,
       sectionTitleEn: item.sectionTitleEn ?? null,
-      sectionTextFr: item.sectionTextFr ?? null,
       sectionTextEn: item.sectionTextEn ?? null,
     };
   }
@@ -147,7 +183,17 @@ export class BlogService {
       include: { items: { orderBy: { position: 'asc' } } },
       orderBy: { createdAt: 'desc' },
     });
-    return rows.map(a => this.serialize(a));
+    return rows.map(a => this.toListItem(a));
+  }
+
+  /** Article complet, servi uniquement sur sa propre page. */
+  async findOne(id: number) {
+    const article = await this.prisma.blogArticle.findFirst({
+      where: { id, published: true },
+      include: { items: { orderBy: { position: 'asc' } } },
+    });
+    if (!article) throw new NotFoundException(`Article ${id} introuvable`);
+    return this.serialize(article);
   }
 
   async findAllAdmin() {
@@ -214,14 +260,11 @@ export class BlogService {
     }
 
     const primary = items[0];
-    const title = (dto.title ?? dto.titleFr ?? primary.title).trim();
-    const titleFr = (dto.titleFr ?? dto.title ?? title).trim();
+    const title = (dto.title ?? dto.titleEn ?? primary.title).trim();
     const titleEn = (dto.titleEn ?? dto.title ?? title).trim();
-    const structuredDto = { ...dto, items };
-    const editorialFr = this.buildEditorial(structuredDto, 'Fr');
-    const editorialEn = this.buildEditorial(structuredDto, 'En');
-    if (!editorialFr || !editorialEn) {
-      throw new BadRequestException('Les versions française et anglaise de l’article sont obligatoires');
+    const editorialEn = this.buildEditorial({ ...dto, items });
+    if (!editorialEn) {
+      throw new BadRequestException('Le texte de l’article est obligatoire');
     }
 
     const a = await this.prisma.blogArticle.create({
@@ -230,18 +273,14 @@ export class BlogService {
         tmdbId: dto.tmdbId ?? primary.tmdbId ?? null,
         type: dto.type ?? primary.type ?? null,
         title,
-        titleFr,
         titleEn,
         channelTitle: dto.channelTitle ?? primary.channelTitle ?? '',
         posterPath: dto.posterPath ?? primary.posterPath ?? null,
         viewCount: dto.viewCount ?? null,
         countryCount: dto.countryCount ?? primary.countryCount ?? null,
         weekOf: dto.weekOf ? new Date(dto.weekOf) : new Date(),
-        editorialFr,
         editorialEn,
-        introFr: dto.introFr ?? null,
         introEn: dto.introEn ?? null,
-        conclusionFr: dto.conclusionFr ?? null,
         conclusionEn: dto.conclusionEn ?? null,
         published: dto.published ?? true,
         items: { create: items.map(item => this.itemCreateData(item)) },
@@ -252,9 +291,7 @@ export class BlogService {
   }
 
   async update(id: number, dto: Partial<CreateBlogArticleDto>) {
-    const normalizedItems = dto.items
-      ? this.normalizeItems(dto.items)
-      : undefined;
+    const normalizedItems = dto.items ? this.normalizeItems(dto.items) : undefined;
     if (dto.items && !normalizedItems?.length) {
       throw new BadRequestException('Un article doit contenir au moins un film ou une série');
     }
@@ -265,18 +302,14 @@ export class BlogService {
       ...(dto.tmdbId !== undefined && { tmdbId: dto.tmdbId ?? null }),
       ...(dto.type !== undefined && { type: dto.type ?? null }),
       ...(dto.title !== undefined && { title: dto.title }),
-      ...(dto.titleFr !== undefined && { titleFr: dto.titleFr ?? null }),
       ...(dto.titleEn !== undefined && { titleEn: dto.titleEn ?? null }),
       ...(dto.channelTitle !== undefined && { channelTitle: dto.channelTitle }),
       ...(dto.posterPath !== undefined && { posterPath: dto.posterPath ?? null }),
       ...(dto.viewCount !== undefined && { viewCount: dto.viewCount ?? null }),
       ...(dto.countryCount !== undefined && { countryCount: dto.countryCount ?? null }),
       ...(dto.weekOf !== undefined && { weekOf: new Date(dto.weekOf!) }),
-      ...(dto.editorialFr !== undefined && { editorialFr: dto.editorialFr }),
       ...(dto.editorialEn !== undefined && { editorialEn: dto.editorialEn }),
-      ...(dto.introFr !== undefined && { introFr: dto.introFr ?? null }),
       ...(dto.introEn !== undefined && { introEn: dto.introEn ?? null }),
-      ...(dto.conclusionFr !== undefined && { conclusionFr: dto.conclusionFr ?? null }),
       ...(dto.conclusionEn !== undefined && { conclusionEn: dto.conclusionEn ?? null }),
       ...(dto.published !== undefined && { published: dto.published }),
     };

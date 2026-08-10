@@ -17,6 +17,13 @@ export class BlogController {
     return this.blogService.findAllAdmin();
   }
 
+  // Declare apres 'all', sinon Nest ferait correspondre « all » au parametre.
+  // Le texte integral n'est servi que sur la page de l'article.
+  @Get(':id')
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.blogService.findOne(id);
+  }
+
   @Post()
   @UseGuards(ApiKeyGuard)
   create(@Body() dto: CreateBlogArticleDto) {

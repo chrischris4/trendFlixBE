@@ -82,18 +82,14 @@ model BlogArticle {
   tmdbId       Int?
   type         String? // "movie" or "tv"
   title        String
-  titleFr      String?
   titleEn      String?
   channelTitle String
   posterPath   String?
   viewCount    BigInt?
   countryCount Int?
   weekOf       DateTime
-  editorialFr  String            @db.Text
   editorialEn  String            @db.Text
-  introFr      String?           @db.Text
   introEn      String?           @db.Text
-  conclusionFr String?           @db.Text
   conclusionEn String?           @db.Text
   published    Boolean           @default(true)
   createdAt    DateTime          @default(now())
@@ -112,9 +108,7 @@ model BlogArticleItem {
   channelTitle   String?
   posterPath     String?
   countryCount   Int?
-  sectionTitleFr String?
   sectionTitleEn String?
-  sectionTextFr  String?     @db.Text
   sectionTextEn  String?     @db.Text
   article        BlogArticle @relation(fields: [articleId], references: [id], onDelete: Cascade)
 
