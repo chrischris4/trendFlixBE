@@ -42,8 +42,188 @@ export class TrendingService implements OnModuleInit {
       this.syncType('tv'),
     ]);
     await this.cleanOld();
+    // Le calcul des statistiques ne doit jamais faire echouer la synchronisation :
+    // les releves du jour sont deja en base a ce stade.
+    try {
+      await this.computeDaysOnChart();
+      await this.computeDailyStats();
+    } catch (e) {
+      this.logger.error(`Statistiques quotidiennes non calculées : ${(e as Error).message}`);
+    }
     this.cache.clear();
     this.logger.log('Synchronisation terminée');
+  }
+
+  /**
+   * Anciennete de chaque titre du releve du jour, en jours distincts passes au
+   * classement. TMDB expose une popularite instantanee, jamais une duree.
+   */
+  async computeDaysOnChart() {
+    const updated = await this.prisma.$executeRaw`
+      WITH tenure AS (
+        SELECT "type", "tmdbId",
+               COUNT(DISTINCT ("fetchedAt" AT TIME ZONE 'UTC')::date)::int AS days
+        FROM trending_items
+        GROUP BY "type", "tmdbId"
+      )
+      UPDATE trending_items t
+      SET "daysOnChart" = tenure.days
+      FROM tenure
+      WHERE t."type" = tenure."type"
+        AND t."tmdbId" = tenure."tmdbId"
+        AND (t."fetchedAt" AT TIME ZONE 'UTC')::date =
+            (SELECT MAX(("fetchedAt" AT TIME ZONE 'UTC')::date) FROM trending_items)`;
+
+    this.logger.log(`Ancienneté calculée pour ${updated} entrées`);
+  }
+
+  /**
+   * Renouvellement quotidien de chaque classement, calcule une fois par jour.
+   *
+   * TMDB publie une popularite du moment : ni la part du classement renouvelee
+   * depuis la veille, ni la duree de presence d'un titre. Les deux se deduisent
+   * de nos releves successifs et sont precalculees ici.
+   */
+  async computeDailyStats() {
+    const rows = await this.prisma.$queryRaw<Array<{
+      type: string; entriesTotal: number; newEntries: number; droppedOut: number;
+      uniqueLanguages: number; avgPopularity: number | null; topGainerId: number | null;
+      topGainerTitle: string | null; topGainerDelta: number | null; topTenureId: number | null;
+      topTenureTitle: string | null; topTenureDays: number | null;
+    }>>`
+      WITH snap AS (
+        SELECT "type", "tmdbId", "title", "originalLanguage", "popularity", "rank",
+               ("fetchedAt" AT TIME ZONE 'UTC')::date AS d
+        FROM trending_items
+      ),
+      today AS (SELECT * FROM snap WHERE d = (SELECT MAX(d) FROM snap)),
+      prev  AS (SELECT * FROM snap WHERE d = (SELECT MAX(d) FROM snap WHERE d < (SELECT MAX(d) FROM snap))),
+      tenure AS (
+        SELECT "type", "tmdbId", COUNT(DISTINCT d)::int AS days
+        FROM snap GROUP BY "type", "tmdbId"
+      ),
+      gain AS (
+        SELECT DISTINCT ON (t."type")
+               t."type", t."tmdbId", t."title", (p."rank" - t."rank")::int AS delta
+        FROM today t JOIN prev p ON p."type" = t."type" AND p."tmdbId" = t."tmdbId"
+        WHERE p."rank" > t."rank"
+        ORDER BY t."type", (p."rank" - t."rank") DESC
+      ),
+      best AS (
+        SELECT DISTINCT ON (t."type")
+               t."type", t."tmdbId", t."title", te.days
+        FROM today t JOIN tenure te ON te."type" = t."type" AND te."tmdbId" = t."tmdbId"
+        ORDER BY t."type", te.days DESC, t."rank" ASC
+      )
+      SELECT
+        t."type",
+        COUNT(*)::int AS "entriesTotal",
+        COUNT(*) FILTER (WHERE p."tmdbId" IS NULL)::int AS "newEntries",
+        (SELECT COUNT(*) FROM prev p2
+          WHERE p2."type" = t."type"
+            AND NOT EXISTS (SELECT 1 FROM today t2 WHERE t2."type" = p2."type" AND t2."tmdbId" = p2."tmdbId")
+        )::int AS "droppedOut",
+        COUNT(DISTINCT t."originalLanguage")::int AS "uniqueLanguages",
+        AVG(t."popularity")::float AS "avgPopularity",
+        MIN(g."tmdbId")::int AS "topGainerId", MIN(g."title") AS "topGainerTitle", MIN(g.delta)::int AS "topGainerDelta",
+        MIN(b."tmdbId")::int AS "topTenureId", MIN(b."title") AS "topTenureTitle", MIN(b.days)::int AS "topTenureDays"
+      FROM today t
+      LEFT JOIN prev p ON p."type" = t."type" AND p."tmdbId" = t."tmdbId"
+      LEFT JOIN gain g ON g."type" = t."type"
+      LEFT JOIN best b ON b."type" = t."type"
+      GROUP BY t."type"`;
+
+    if (!rows.length) {
+      this.logger.warn('Statistiques quotidiennes : aucun relevé à analyser');
+      return;
+    }
+
+    const day = new Date();
+    day.setUTCHours(0, 0, 0, 0);
+
+    for (const r of rows) {
+      const churnPct = r.entriesTotal > 0 ? Math.round((r.newEntries / r.entriesTotal) * 100) : 0;
+      const data = { ...r, churnPct, day };
+      await this.prisma.dailyChartStat.upsert({
+        where: { day_type: { day, type: r.type } },
+        create: data,
+        update: data,
+      });
+    }
+
+    this.logger.log(`Statistiques quotidiennes calculées pour ${rows.length} classements`);
+  }
+
+  // Simple lecture des lignes precalculees, sans aucune agregation.
+  async getDailyStats(type: 'movie' | 'tv', days = 7) {
+    return this.prisma.dailyChartStat.findMany({
+      where: { type },
+      orderBy: { day: 'desc' },
+      take: Math.min(days, 90),
+    });
+  }
+
+  /**
+   * Trajectoire d'un titre : la popularite TMDB decroit avec le temps, donc son
+   * pic et sa pente disent bien plus que sa valeur du jour. Requete servie par
+   * l'index sur tmdbId.
+   */
+  async getItemHistory(tmdbId: number) {
+    const key = `history:${tmdbId}`;
+    const cached = this.fromCache<unknown>(key);
+    if (cached) return cached;
+
+    const rows = await this.prisma.trendingItem.findMany({
+      where: { tmdbId },
+      orderBy: { fetchedAt: 'asc' },
+    });
+    if (!rows.length) return null;
+
+    const dayOf = (d: Date) => d.toISOString().slice(0, 10);
+    const latest = rows[rows.length - 1];
+
+    const byDay = new Map<string, { rank: number; popularity: number | null }>();
+    let peakRank = { rank: Number.MAX_SAFE_INTEGER, day: '' };
+    let peakPopularity = { value: -1, day: '' };
+
+    for (const row of rows) {
+      const day = dayOf(row.fetchedAt);
+      const existing = byDay.get(day);
+      // Un jour peut porter plusieurs releves : on garde le meilleur rang.
+      if (!existing || row.rank < existing.rank) byDay.set(day, { rank: row.rank, popularity: row.popularity });
+      if (row.rank < peakRank.rank) peakRank = { rank: row.rank, day };
+      if ((row.popularity ?? -1) > peakPopularity.value) peakPopularity = { value: row.popularity ?? 0, day };
+    }
+
+    const days = [...byDay.keys()].sort();
+    const current = latest.popularity ?? 0;
+    // Part de popularite perdue depuis le pic : mesure la retombee apres sortie.
+    const decayPct = peakPopularity.value > 0
+      ? Math.max(0, Math.round((1 - current / peakPopularity.value) * 100))
+      : null;
+
+    const result = {
+      tmdbId,
+      type: latest.type,
+      title: latest.title,
+      posterPath: latest.posterPath,
+      overview: latest.overview,
+      releaseDate: latest.releaseDate,
+      originalLanguage: latest.originalLanguage,
+      voteAverage: latest.voteAverage,
+      voteCount: latest.voteCount,
+      firstSeen: days[0],
+      lastSeen: days[days.length - 1],
+      daysOnChart: days.length,
+      peakRank,
+      peakPopularity,
+      currentPopularity: current,
+      decayPct,
+      timeline: days.map(day => ({ day, rank: byDay.get(day)!.rank, popularity: byDay.get(day)!.popularity })),
+    };
+
+    this.toCache(key, result);
+    return result;
   }
 
   private async syncType(type: 'movie' | 'tv') {

@@ -18,6 +18,35 @@ enum BlogArticleFormat {
   RETROSPECTIVE
 }
 
+// Statistiques calculees une fois par jour par le cron, apres la synchronisation.
+// Les pages ne font que lire ces lignes : aucune agregation sur 90 jours n'est
+// declenchee par une requete visiteur. Une ligne par type, films et series
+// etant deux classements distincts.
+model DailyChartStat {
+  id               Int      @id @default(autoincrement())
+  day              DateTime @db.Date
+  type             String // "movie" ou "tv"
+  entriesTotal     Int // taille du releve du jour
+  newEntries       Int // titres absents du releve de la veille
+  droppedOut       Int // titres presents la veille et absents aujourd'hui
+  churnPct         Int // part renouvelee du classement, en %
+  uniqueLanguages  Int
+  // La popularite TMDB decroit avec le temps : sa moyenne quotidienne mesure
+  // si le classement est porte par des sorties recentes ou par du catalogue.
+  avgPopularity    Float?
+  topGainerId      Int?
+  topGainerTitle   String?
+  topGainerDelta   Int? // gain de rang par rapport a la veille
+  topTenureId      Int?
+  topTenureTitle   String?
+  topTenureDays    Int? // jours de presence sur la fenetre conservee
+  computedAt       DateTime @default(now())
+
+  @@unique([day, type])
+  @@index([type, day])
+  @@map("daily_chart_stats")
+}
+
 model TrendingItem {
   id               String   @id @default(cuid())
   tmdbId           Int
@@ -34,6 +63,10 @@ model TrendingItem {
   originalLanguage String?
   rank             Int
   fetchedAt        DateTime @default(now())
+  // Nombre de jours distincts ou ce titre a figure au classement, sur la
+  // fenetre conservee. Precalcule apres chaque synchronisation : TMDB expose
+  // une popularite instantanee, jamais une duree de presence.
+  daysOnChart      Int?
 
   @@index([type, fetchedAt])
   @@index([tmdbId])
