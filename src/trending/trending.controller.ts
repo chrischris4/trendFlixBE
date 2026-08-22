@@ -35,6 +35,15 @@ export class TrendingController {
     return { type: t, total: stats.length, stats };
   }
 
+  // Fiches dont la trajectoire est assez fournie pour meriter d'etre indexees.
+  // Le seuil est fourni par l'appelant plutot que code ici : c'est le front qui
+  // decide ce qu'il marque robots.index, et le sitemap doit dire exactement la
+  // meme chose. Deux constantes separees finiraient par deriver.
+  @Get('indexable')
+  getIndexable(@Query('minDays') minDays: string = '14') {
+    return this.trendingService.getIndexableItems(parseInt(minDays) || 14);
+  }
+
   // Trajectoire d'un titre : pic de rang, pic de popularite, retombee, duree.
   @Get('history/:tmdbId')
   async getHistory(@Param('tmdbId', ParseIntPipe) tmdbId: number) {

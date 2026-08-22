@@ -226,6 +226,52 @@ export class TrendingService implements OnModuleInit {
     return result;
   }
 
+  /**
+   * Fiches dont la trajectoire justifie une page indexee. Le seuil vient de
+   * l'appelant plutot que d'etre code ici : c'est le front qui decide ce qu'il
+   * marque `robots.index`, et le sitemap doit dire exactement la meme chose.
+   * Deux constantes separees finiraient par deriver.
+   *
+   * L'anciennete est recalculee ici au lieu de lire la colonne `daysOnChart` :
+   * `computeDaysOnChart` ne la renseigne que sur le releve du jour, elle est
+   * donc nulle pour un titre sorti du classement — alors que sa page, elle,
+   * reste indexee tant que son historique tient.
+   *
+   * Le regroupement porte sur (type, tmdbId) et non sur le seul tmdbId : les
+   * identifiants films et series vivent dans deux espaces distincts chez TMDB,
+   * et une page existe par couple.
+   */
+  async getIndexableItems(minDays: number) {
+    const key = `indexable:${minDays}`;
+    const cached = this.fromCache<unknown[]>(key);
+    if (cached) return cached;
+
+    const rows = await this.prisma.$queryRaw<Array<{
+      type: string; tmdbId: number; title: string; daysOnChart: number; lastSeen: Date;
+    }>>`
+      WITH tenure AS (
+        SELECT "type", "tmdbId",
+               COUNT(DISTINCT ("fetchedAt" AT TIME ZONE 'UTC')::date)::int AS days,
+               MAX("fetchedAt") AS last_seen
+        FROM trending_items
+        GROUP BY "type", "tmdbId"
+      )
+      SELECT t."type",
+             t."tmdbId",
+             t.days       AS "daysOnChart",
+             t.last_seen  AS "lastSeen",
+             (SELECT i."title" FROM trending_items i
+               WHERE i."type" = t."type" AND i."tmdbId" = t."tmdbId"
+               ORDER BY i."fetchedAt" DESC
+               LIMIT 1)   AS "title"
+      FROM tenure t
+      WHERE t.days >= ${minDays}
+      ORDER BY t.days DESC`;
+
+    this.toCache(key, rows);
+    return rows;
+  }
+
   private async syncType(type: 'movie' | 'tv') {
     const items = await this.tmdb.fetchTrending(type, 'week', 5);
     if (!items.length) return;
